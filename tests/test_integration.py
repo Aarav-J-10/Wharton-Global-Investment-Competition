@@ -30,7 +30,7 @@ def test_screen_publishes_and_validator_passes(run):
     for f in ("run_manifest.json", "universe_audit.csv", "coverage_report.csv", "factor_dictionary.csv",
               "factor_values.csv", "ranked_universe.csv", "research_queue_top20.csv", "priority_queue_top10.csv",
               "sensitivity_results.csv", "factor_correlation.csv", "source_map.csv", "model_gate_memo.md",
-              "lineage.jsonl", "diversified_research_view_top10.csv"):
+              "lineage.jsonl", "diversified_research_view_top10.csv", "priority_queue_risk.json"):
         assert (run / f).exists(), f
 
 
@@ -74,6 +74,7 @@ def test_failed_gate_removes_queues(snap, tmp_path):
     status = json.loads((out / "STATUS.json").read_text())
     assert status["status"] == "NO VALIDATED RANKING AVAILABLE"
     assert not (out / "priority_queue_top10.csv").exists()
+    assert not (out / "priority_queue_risk.json").exists()
 
 
 def test_no_lookahead_in_fundamentals(snap):

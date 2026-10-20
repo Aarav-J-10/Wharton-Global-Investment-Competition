@@ -13,7 +13,7 @@ Global High School Investment Competition (client: Laura Gao), plus a walk-forwa
 pip install -r requirements.txt
 export WIC_SEC_USER_AGENT="Your Name your@email.com"   # SEC fair-access requirement (never saved)
 python -m wic all            # acquire snapshot -> screen -> backtest -> reproduce & verify
-python -m pytest -q          # 50 offline tests (synthetic fixtures only)
+python -m pytest -q          # 57 offline tests (synthetic fixtures only)
 ```
 
 Individual steps: `python -m wic acquire [--cutoff YYYY-MM-DD]`, `python -m wic screen`,
@@ -76,7 +76,7 @@ outside the standard model.
 `outputs/screen/<run_id>/`: `priority_queue_top10.csv`, `research_queue_top20.csv`,
 `diversified_research_view_top10.csv`, `ranked_universe.csv`, `factor_values.csv`, `universe_audit.csv`,
 `coverage_report.csv`, `missing_reasons.csv`, `sensitivity_results.csv`, `factor_correlation.csv`,
-`source_map.csv`, `lineage.jsonl`, `model_gate_memo.md`, `VALIDATION.json`, `STATUS.json`,
+`source_map.csv`, `lineage.jsonl`, `priority_queue_risk.json`, `model_gate_memo.md`, `VALIDATION.json`, `STATUS.json`,
 `run_manifest.json`.
 
 `outputs/backtest/<run_id>/`: `BACKTEST_REPORT.md` (tables + charts), `BACKTEST_SUMMARY.json`, daily/monthly
@@ -107,11 +107,13 @@ are biased upward; Top-10-vs-scored-universe comparisons share the same bias and
 | `wic/cross_section.py` | Eligibility, duplicate share classes, resilience, research states |
 | `wic/sensitivity.py` | Predeclared sensitivity suite and factor correlations |
 | `wic/validate.py` | Independent validator |
+| `wic/risk.py` | Ex-ante risk profile of the Top 10 / diversified view (vol, beta, correlations) |
 | `wic/pipeline.py` | Live screen artifacts and model-gate memo |
 | `wic/backtest/` | Walk-forward engine, metrics and report |
 | `config/competition_v1.yaml` | All thresholds (changes require a logged model change) |
 | `docs/MODEL_CHANGE_LOG.md` | Every deviation from spec v1.1, with reasons |
 | `docs/PRIOR_BUILD_AUDIT.md` | Why the handed-off build produced zero rankings |
+| `docs/STRATEGY_OPERATIONS.md` | Monthly research cycle, turnover governance, hard limits |
 | `docs/reference/` | Controlling specification and model-gate memo |
 
 ## Limits

@@ -149,6 +149,11 @@ def run_screen(snapshot_path: str | Path, out_root: str | Path, config_path: str
     source_map["price_source"] = "Yahoo Finance via yfinance (snapshot prices.parquet)"
     write_csv(out / "source_map.csv", source_map.sort_values("ticker"))
     write_lineage(out / "lineage.jsonl", cs, funds, ref, cfg)
+    if len(top10):
+        from .risk import book_risk
+        write_json(out / "priority_queue_risk.json", {
+            "TOP10": book_risk(series, top10, ref),
+            "DIVERSIFIED_VIEW": book_risk(series, div, ref) if len(div) else None})
 
     # ---------------- validation, gates, manifest
     from .validate import validate_run
@@ -162,7 +167,8 @@ def run_screen(snapshot_path: str | Path, out_root: str | Path, config_path: str
     }
     published = all(gates.values())
     if not published:
-        for f in ("priority_queue_top10.csv", "research_queue_top20.csv", "diversified_research_view_top10.csv"):
+        for f in ("priority_queue_top10.csv", "research_queue_top20.csv", "diversified_research_view_top10.csv",
+                  "priority_queue_risk.json"):
             (out / f).unlink(missing_ok=True)
     status = {"run_id": run_id, "status": "RANKING_PUBLISHED" if published else "NO VALIDATED RANKING AVAILABLE",
               "publication_gates": gates, "cutoff": cutoff.date().isoformat(), "market_session": ref.date().isoformat(),
