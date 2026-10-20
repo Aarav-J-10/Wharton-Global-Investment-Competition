@@ -56,11 +56,12 @@ def _missing(reason: str, **lineage) -> Q:
 
 class FA:
     """Column arrays for one concept (numpy; far cheaper than DataFrame slicing)."""
-    __slots__ = ("start", "end", "val", "filed", "dur", "accn", "form")
+    __slots__ = ("start", "end", "val", "filed", "dur", "accn", "form", "src")
 
-    def __init__(self, start, end, val, filed, dur, accn, form):
+    def __init__(self, start, end, val, filed, dur, accn, form, src=None):
         self.start, self.end, self.val, self.filed = start, end, val, filed
         self.dur, self.accn, self.form = dur, accn, form
+        self.src = src  # per-row concept name, only for merged cross-tag series
 
     @classmethod
     def from_frame(cls, df: pd.DataFrame) -> "FA":
@@ -72,7 +73,7 @@ class FA:
         return len(self.val)
 
     def sel(self, mask) -> "FA":
-        return FA(*(getattr(self, k)[mask] for k in self.__slots__))
+        return FA(*(None if getattr(self, k) is None else getattr(self, k)[mask] for k in self.__slots__))
 
     @property
     def is_instant(self) -> np.ndarray:
@@ -82,7 +83,7 @@ class FA:
         st = self.start[i]
         return {"start": None if np.isnat(st) else pd.Timestamp(st), "end": pd.Timestamp(self.end[i]),
                 "val": float(self.val[i]), "filed": pd.Timestamp(self.filed[i]), "dur": self.dur[i],
-                "accn": self.accn[i], "form": self.form[i]}
+                "accn": self.accn[i], "form": self.form[i], "src": None if self.src is None else self.src[i]}
 
 
 class View:
@@ -114,7 +115,7 @@ class View:
 
 
 def _lin(row: dict, concept, route, **extra) -> dict:
-    d = {"concept": concept, "route": route, "accn": row["accn"], "filed": row["filed"].date().isoformat(),
+    d = {"concept": row.get("src") or concept, "route": route, "accn": row["accn"], "filed": row["filed"].date().isoformat(),
          "end": row["end"].date().isoformat(), "form": row["form"]}
     if row.get("start") is not None:
         d["start"] = row["start"].date().isoformat()
@@ -184,7 +185,27 @@ def _ttm_one(fa: FA, E: pd.Timestamp, concept: str) -> Q:
     return _missing("TTM_INCOMPLETE", concept=concept, period_end=E.date().isoformat())
 
 
-def flow_ttm(view: View, concepts: tuple, E: pd.Timestamp) -> Q:
+def merged(view: View, concepts: tuple) -> FA | None:
+    """One series across equivalent tags; per period the highest-priority tag wins."""
+    parts = [(c, view.get(c)) for c in concepts]
+    parts = [(c, fa) for c, fa in parts if fa is not None]
+    if len(parts) < 2:
+        return None
+    seen, keep = set(), []
+    for c, fa in parts:
+        for i in range(len(fa)):
+            key = (fa.start[i], fa.end[i])
+            if key not in seen:
+                seen.add(key)
+                keep.append((c, fa, i))
+    keep.sort(key=lambda t: t[1].filed[t[2]])
+    pick = lambda k: np.array([getattr(fa, k)[i] for _, fa, i in keep])
+    return FA(pick("start").astype("datetime64[ns]"), pick("end").astype("datetime64[ns]"), pick("val").astype(float),
+              pick("filed").astype("datetime64[ns]"), pick("dur").astype(float), pick("accn").astype(object),
+              pick("form").astype(object), np.array([c for c, _, _ in keep], dtype=object))
+
+
+def flow_ttm(view: View, concepts: tuple, E: pd.Timestamp, allow_mixed: bool = False) -> Q:
     reason = None
     for c in concepts:
         fa = view.get(c)
@@ -194,7 +215,81 @@ def flow_ttm(view: View, concepts: tuple, E: pd.Timestamp) -> Q:
         if q.ok:
             return q
         reason = reason or q
+    if allow_mixed:
+        m = merged(view, concepts)
+        if m is not None:
+            q = _ttm_one(m, E, "MIXED")
+            if q.ok:
+                q.lineage["flag"] = "TTM_ACROSS_EQUIVALENT_TAGS"
+                return q
     return reason or _missing("CONCEPT_NOT_REPORTED", concepts=list(concepts))
+
+
+def _fy_values(view: View, concept: str) -> dict[pd.Timestamp, tuple[float, dict]]:
+    fa = view.get(concept)
+    out = {}
+    if fa is None:
+        return out
+    for i in np.flatnonzero((fa.dur >= FY_DUR[0]) & (fa.dur <= FY_DUR[1])):
+        r = fa.row(i)
+        out[r["end"]] = (r["val"], _lin(r, concept, "FY"))  # later rows are later filings
+    return out
+
+
+def primary_order(view: View, concepts: tuple) -> tuple:
+    """Equivalent tags reordered so the one with the largest value at the latest FY comes first.
+
+    Issuers sometimes use a generic tag (e.g. `Revenues`) for a sub-line; the total is
+    the largest of the alternatives reported for the same fiscal year.
+    """
+    vals = {c: _fy_values(view, c) for c in concepts}
+    ends = [e for v in vals.values() for e in v]
+    if not ends:
+        return concepts
+    latest = max(ends)
+    at = [(c, next(v[0] for e, v in vals[c].items() if abs((e - latest).days) <= 7)) for c in concepts
+          if any(abs((e - latest).days) <= 7 for e in vals[c])]
+    first = [c for c, _ in sorted(at, key=lambda t: -abs(t[1]))]
+    return tuple(first + [c for c in concepts if c not in first])
+
+
+def consistent_annual_series(view: View, concepts: tuple, n: int = 4, tol: float = 0.02, reorder: bool = True):
+    """Annual series from the primary tag; gaps filled only from tags verified equivalent.
+
+    A secondary tag may fill a missing year only if it matches the primary tag within
+    `tol` (relative) in at least one fiscal year both report.
+    """
+    order = primary_order(view, concepts) if reorder else concepts
+    vals = {c: _fy_values(view, c) for c in order}
+    primary = vals[order[0]]
+    if not primary:
+        return [], "CONCEPT_NOT_REPORTED"
+
+    def match(d, e):
+        hit = [k for k in d if abs((k - e).days) <= 7]
+        return d[hit[0]] if hit else None
+
+    equivalent = []
+    for c in order[1:]:
+        for e, (v, _) in primary.items():
+            other = match(vals[c], e)
+            if other and v and abs(other[0] - v) <= tol * abs(v):
+                equivalent.append(c)
+                break
+    fy0 = max(primary)
+    out = [(fy0, *primary[fy0])]
+    for k in range(1, n):
+        target = fy0 - pd.DateOffset(years=k)
+        got = None
+        for c in [order[0], *equivalent]:
+            hit = [e for e in vals[c] if abs((e - target).days) <= 20]
+            if hit:
+                got = (hit[0], *vals[c][hit[0]])
+                break
+        if got is None:
+            return out, "INSUFFICIENT_ANNUAL_HISTORY"
+        out.append(got)
+    return out, "VALID"
 
 
 def annual_series(view: View, concepts: tuple, n: int = 4) -> tuple[list[tuple[pd.Timestamp, float, dict]], str]:
@@ -338,39 +433,64 @@ class IssuerFacts:
                 ends.append(pd.Timestamp(fa.end[~fa.is_instant].max()))
         return max(ends) if ends else None
 
+    MIN_PLAUSIBLE_SHARES = 1e5  # below this an S&P 500 share count is a tagging-scale error
+
     def shares(self, view: View, E: pd.Timestamp) -> Q:
-        wad = None
-        fa = view.get(C.SHARES_WAD[0])
-        if fa is not None:
-            wad = _last(fa, _near(fa.end, E, 3) & (fa.dur <= 100))
-        cands = []
+        """Share count on the price data's split basis, corroborated by an independent source.
+
+        Candidates in priority: cover page, balance sheet, weighted diluted (latest quarter).
+        A candidate is accepted only if another independent source (balance-sheet shares,
+        or weighted diluted shares for this or any of the prior three quarters) agrees
+        within 25% after split adjustment. Issuer tagging-scale errors (e.g. values tagged
+        in millions or thousands) are thereby rejected instead of propagating into market cap.
+        """
+        def adj(row):
+            return row["val"] * self.split_factor_after(row["filed"])
+
+        cands = []  # (route, adjusted value, row, concept)
         cov = view.get(C.SHARES_COVER[0])
         if cov is not None:
             latest_accn = cov.accn[-1]
             same = cov.accn == latest_accn
-            last_end = cov.end[same].max()
-            rows = np.flatnonzero(same & (cov.end == last_end))
+            rows = np.flatnonzero(same & (cov.end == cov.end[same].max()))
             r = cov.row(rows[-1])
             if (E - r["end"]).days <= 200:  # cover-page date near the latest period
-                cands.append(("COVER_PAGE", float(cov.val[rows].sum()), r, C.SHARES_COVER[0]))
+                r = {**r, "val": float(cov.val[rows].sum())}
+                cands.append(("COVER_PAGE", adj(r), r, C.SHARES_COVER[0]))
         bs = view.get(C.SHARES_BS[0])
         if bs is not None:
             r = _last(bs, bs.is_instant & _near(bs.end, E, 3))
             if r:
-                cands.append(("BALANCE_SHEET", r["val"], r, C.SHARES_BS[0]))
-        ref = float(wad["val"]) if wad is not None else None
+                cands.append(("BALANCE_SHEET", adj(r), r, C.SHARES_BS[0]))
+        wads = []
+        fa = view.get(C.SHARES_WAD[0])
+        if fa is not None:
+            q_idx = np.flatnonzero((fa.dur <= 100) & (fa.end <= np.datetime64(E, "ns"))
+                                   & (fa.end >= np.datetime64(E - pd.DateOffset(months=12), "ns")))
+            for i in q_idx[np.argsort(fa.end[q_idx])][::-1][:4]:
+                r = fa.row(i)
+                wads.append(r)
+        if wads and abs((wads[0]["end"] - E).days) <= 3:
+            cands.append(("WEIGHTED_DILUTED", adj(wads[0]), wads[0], C.SHARES_WAD[0]))
+        cands = [c for c in cands if c[1] >= self.MIN_PLAUSIBLE_SHARES]
+        refs = [("BALANCE_SHEET", v, ("BALANCE_SHEET", r["end"])) for rt, v, r, _ in cands if rt == "BALANCE_SHEET"]
+        refs += [(f"WAD_{w['end'].date()}", adj(w), ("WEIGHTED_DILUTED", w["end"]))
+                 for w in wads if adj(w) >= self.MIN_PLAUSIBLE_SHARES]
         for route, val, row, concept in cands:
-            if val <= 0:
-                continue
-            if ref is None or 0.75 <= val / ref <= 1.25:
-                f = self.split_factor_after(row["filed"])
-                return Q(val * f, "VALID", {"inputs": [_lin(row, concept, route)], "split_factor": f,
-                                            "wad_check": None if ref is None else round(val / ref, 4)})
-        if wad is not None and float(wad["val"]) > 0:
-            f = self.split_factor_after(wad["filed"])
-            return Q(float(wad["val"]) * f, "VALID", {"inputs": [_lin(wad, C.SHARES_WAD[0], "WEIGHTED_DILUTED")],
-                                                      "split_factor": f, "flag": "SHARES_FROM_WEIGHTED_AVERAGE"})
-        return _missing("SHARES_MISSING")
+            for ref_name, ref, key in refs:
+                if key == (route, row["end"]):
+                    continue  # a source cannot corroborate itself
+                if 0.75 <= val / ref <= 1.25:
+                    f = self.split_factor_after(row["filed"])
+                    out = {"inputs": [_lin(row, concept, route)], "split_factor": f,
+                           "corroborated_by": ref_name, "ratio": round(val / ref, 4)}
+                    if route == "WEIGHTED_DILUTED":
+                        out["flag"] = "SHARES_FROM_WEIGHTED_AVERAGE"
+                    return Q(val, "VALID", out)
+        if not cands:
+            return _missing("SHARES_MISSING")
+        return _missing("SHARES_MAPPING_REVIEW", detail="no two independent share sources agree within 25%",
+                        candidates={rt: v for rt, v, _, _ in cands})
 
     def fundamentals(self, asof: pd.Timestamp) -> dict:
         """Canonical quantities known at `asof` (filing date <= asof)."""
@@ -382,7 +502,8 @@ class IssuerFacts:
             return out
         out["period_end"] = E
         q = {}
-        q["revenue"] = flow_ttm(view, C.REVENUE, E)
+        revenue_tags = primary_order(view, C.REVENUE)
+        q["revenue"] = flow_ttm(view, revenue_tags, E)
         ebit = flow_ttm(view, C.OPERATING_INCOME, E)
         if not ebit.ok:
             pre, intr = flow_ttm(view, C.PRETAX_INCOME, E), flow_ttm(view, C.INTEREST_EXPENSE, E)
@@ -390,7 +511,7 @@ class IssuerFacts:
                 ebit = Q(pre.value + intr.value, "VALID", {"method": "PRETAX_PLUS_INTEREST",
                                                           "inputs": [pre.lineage, intr.lineage]})
         q["ebit"] = ebit
-        da = flow_ttm(view, C.DA, E)
+        da = flow_ttm(view, C.DA, E, allow_mixed=True)
         if not da.ok:
             dep, amo = flow_ttm(view, C.DEPRECIATION, E), flow_ttm(view, C.AMORTIZATION, E)
             if dep.ok:
@@ -398,8 +519,8 @@ class IssuerFacts:
                        {"method": "DEPRECIATION+AMORTIZATION" if amo.ok else "DEPRECIATION_ONLY",
                         "inputs": [dep.lineage] + ([amo.lineage] if amo.ok else [])})
         q["da"] = da
-        q["cfo"] = flow_ttm(view, C.CFO, E)
-        q["capex"] = flow_ttm(view, C.CAPEX, E)
+        q["cfo"] = flow_ttm(view, C.CFO, E, allow_mixed=True)
+        q["capex"] = flow_ttm(view, C.CAPEX, E, allow_mixed=True)
         q["interest"] = flow_ttm(view, C.INTEREST_EXPENSE, E)
         q["pretax"] = flow_ttm(view, C.PRETAX_INCOME, E)
         q["tax"] = flow_ttm(view, C.INCOME_TAX, E)
@@ -441,8 +562,8 @@ class IssuerFacts:
         q["tax_rate"] = tax_rate
 
         # Annual histories
-        rev_hist, rev_status = annual_series(view, C.REVENUE, 4)
-        eps_hist, eps_status = annual_series(view, C.EPS, 4)
+        rev_hist, rev_status = consistent_annual_series(view, revenue_tags, 4, tol=0.02)
+        eps_hist, eps_status = consistent_annual_series(view, C.EPS, 4, tol=0.03, reorder=False)
         cfo_hist, cfo_status = annual_series(view, C.CFO, 3)
         capex_hist, capex_status = annual_series(view, C.CAPEX, 3)
         out["rev_hist"], out["rev_hist_status"] = rev_hist, rev_status

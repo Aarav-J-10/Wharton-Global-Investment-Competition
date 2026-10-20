@@ -91,8 +91,8 @@ def test_instant_requires_matching_date():
 
 
 def test_split_adjusted_shares_and_eps():
-    rows = [fact("dei:EntityCommonStockSharesOutstanding", None, "2020-01-25", 100, "2020-02-01", "10-K", unit="shares"),
-            fact("WeightedAverageNumberOfDilutedSharesOutstanding", "2019-10-01", "2019-12-31", 100, "2020-02-01",
+    rows = [fact("dei:EntityCommonStockSharesOutstanding", None, "2020-01-25", 1e8, "2020-02-01", "10-K", unit="shares"),
+            fact("WeightedAverageNumberOfDilutedSharesOutstanding", "2019-10-01", "2019-12-31", 1e8, "2020-02-01",
                  "10-K", unit="shares"),
             fact("NetCashProvidedByUsedInOperatingActivities", "2019-01-01", "2019-12-31", 1, "2020-02-01", "10-K")]
     for y, e in zip(range(2016, 2020), (1.0, 1.2, 1.4, 1.6)):
@@ -101,7 +101,7 @@ def test_split_adjusted_shares_and_eps():
     splits = pd.DataFrame({"date": [T("2020-08-31")], "splits": [4.0]})
     iss = IssuerFacts(1, pd.DataFrame(rows), splits)
     f = iss.fundamentals(T("2020-03-01"))
-    assert f["q"]["shares"].value == pytest.approx(400)
+    assert f["q"]["shares"].value == pytest.approx(4e8)
     assert [round(v, 3) for _, v, _ in f["eps_hist"]] == [0.4, 0.35, 0.3, 0.25]
 
 
@@ -111,3 +111,67 @@ def test_fundamentals_ignore_future_filings():
     iss = IssuerFacts(1, pd.DataFrame(rows))
     assert iss.fundamentals(T("2025-04-30"))["period_end"] == T("2024-12-31")
     assert iss.fundamentals(T("2025-05-01"))["period_end"] == T("2025-03-31")
+
+
+def test_ttm_bridges_across_equivalent_tags_only_when_flagged():
+    rows = [fact("PaymentsToAcquireProductiveAssets", "2024-01-01", "2024-12-31", 400, "2025-02-20", "10-K"),
+            fact("PaymentsToAcquirePropertyPlantAndEquipment", "2025-01-01", "2025-06-30", 230, "2025-08-01"),
+            fact("PaymentsToAcquirePropertyPlantAndEquipment", "2024-01-01", "2024-06-30", 190, "2025-08-01")]
+    tags = ("PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets")
+    assert not flow_ttm(view(rows), tags, T("2025-06-30")).ok
+    q = flow_ttm(view(rows), tags, T("2025-06-30"), allow_mixed=True)
+    assert q.value == pytest.approx(440) and q.lineage["flag"] == "TTM_ACROSS_EQUIVALENT_TAGS"
+    assert {i["concept"] for i in q.lineage["inputs"]} == set(tags)
+
+
+def _share_rows(cover, wad, wad_prev=None):
+    rows = [fact("NetCashProvidedByUsedInOperatingActivities", "2025-04-01", "2025-06-30", 1, "2025-08-01"),
+            fact("dei:EntityCommonStockSharesOutstanding", None, "2025-07-25", cover, "2025-08-01", unit="shares"),
+            fact("WeightedAverageNumberOfDilutedSharesOutstanding", "2025-04-01", "2025-06-30", wad, "2025-08-01",
+                 unit="shares")]
+    if wad_prev:
+        rows.append(fact("WeightedAverageNumberOfDilutedSharesOutstanding", "2025-01-01", "2025-03-31", wad_prev,
+                         "2025-05-01", unit="shares"))
+    return pd.DataFrame(rows)
+
+
+@pytest.mark.parametrize("bad_wad", [711.1, 98.2e12])  # issuer tagged in millions / thousands-scale errors
+def test_share_scale_errors_rejected_and_corroborated_elsewhere(bad_wad):
+    f = IssuerFacts(1, _share_rows(7.1e8, bad_wad, wad_prev=7.12e8)).fundamentals(T("2025-08-02"))
+    assert f["q"]["shares"].value == pytest.approx(7.1e8)
+    assert f["q"]["shares"].lineage["corroborated_by"].startswith("WAD_2025-03")
+
+
+def test_uncorroborated_shares_blocked_not_guessed():
+    f = IssuerFacts(1, _share_rows(7.1e8, 98.2e12)).fundamentals(T("2025-08-02"))
+    assert f["q"]["shares"].status == "SHARES_MAPPING_REVIEW" and f["q"]["shares"].value is None
+
+
+def test_revenue_sub_line_tag_not_mixed_into_history():
+    """General Mills pattern: `Revenues` tagged for a ~2B sub-line, total under another tag."""
+    from wic.accounting.fundamentals import consistent_annual_series, primary_order
+    rows = []
+    for y, total in zip(range(2022, 2026), (18.0e9, 19.0e9, 20.0e9, 19.5e9)):
+        rows.append(fact("RevenueFromContractWithCustomerExcludingAssessedTax", f"{y}-01-01", f"{y}-12-31", total,
+                         f"{y + 1}-02-01", "10-K"))
+    rows += [fact("Revenues", "2022-01-01", "2022-12-31", 1.9e9, "2023-02-01", "10-K"),
+             fact("Revenues", "2023-01-01", "2023-12-31", 2.0e9, "2024-02-01", "10-K")]
+    v = view(rows)
+    assert primary_order(v, ("Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax"))[0] == \
+        "RevenueFromContractWithCustomerExcludingAssessedTax"
+    hist, status = consistent_annual_series(v, ("Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax"))
+    assert status == "VALID" and [h[1] for h in hist] == [19.5e9, 20.0e9, 19.0e9, 18.0e9]
+
+
+def test_equivalent_tag_fills_gap_only_when_verified():
+    from wic.accounting.fundamentals import consistent_annual_series
+    rows = [fact("RevenueFromContractWithCustomerExcludingAssessedTax", f"{y}-01-01", f"{y}-12-31", 100.0 + y - 2020,
+                 f"{y + 1}-02-01", "10-K") for y in (2023, 2024, 2025)]
+    rows.append(fact("Revenues", "2022-01-01", "2022-12-31", 102.0, "2023-02-01", "10-K"))
+    rows.append(fact("Revenues", "2023-01-01", "2023-12-31", 103.0, "2024-02-01", "10-K"))   # matches 2023
+    tags = ("Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax")
+    hist, status = consistent_annual_series(view(rows), tags)
+    assert status == "VALID" and hist[3][1] == 102.0
+    rows[-1] = fact("Revenues", "2023-01-01", "2023-12-31", 50.0, "2024-02-01", "10-K")       # no longer equivalent
+    hist, status = consistent_annual_series(view(rows), tags)
+    assert status == "INSUFFICIENT_ANNUAL_HISTORY"

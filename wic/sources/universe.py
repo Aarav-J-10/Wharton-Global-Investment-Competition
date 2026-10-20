@@ -74,10 +74,22 @@ def parse_constituents_html(html: str) -> pd.DataFrame:
 
 
 class WikipediaUniverse:
-    def __init__(self, session: PoliteSession | None = None):
-        self.http = session or PoliteSession(WIKI_UA, min_interval=0.5)
+    def __init__(self, session: PoliteSession | None = None, min_interval: float = 1.0,
+                 cache_dir: Path | None = None):
+        self.http = session or PoliteSession(WIKI_UA, min_interval=min_interval)
+        self.cache_dir = cache_dir
 
     def revision_at(self, cutoff_utc: str) -> dict:
+        cache = self.cache_dir / f"revision_at_{cutoff_utc.replace(':', '')}.json" if self.cache_dir else None
+        if cache and cache.exists():
+            return json.loads(cache.read_text())
+        rev = self._revision_at(cutoff_utc)
+        if cache:
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps(rev))
+        return rev
+
+    def _revision_at(self, cutoff_utc: str) -> dict:
         params = {"action": "query", "prop": "revisions", "titles": WIKI_TITLE, "rvlimit": 1,
                   "rvstart": cutoff_utc, "rvdir": "older", "rvprop": "ids|timestamp|sha1",
                   "format": "json", "formatversion": 2}
@@ -89,11 +101,18 @@ class WikipediaUniverse:
         return {"revid": rev["revid"], "timestamp": rev["timestamp"], "sha1": rev.get("sha1")}
 
     def fetch_revision(self, revid: int) -> tuple[pd.DataFrame, bytes]:
-        params = {"action": "parse", "oldid": revid, "prop": "text", "format": "json", "formatversion": 2}
-        r = self.http.get(WIKI_API, params=params)
-        if r.status_code != 200:
-            raise SourceUnavailable(f"Wikipedia parse HTTP {r.status_code}")
-        raw = r.content
+        cache = self.cache_dir / f"rev{revid}.json" if self.cache_dir else None
+        if cache and cache.exists():
+            raw = cache.read_bytes()
+        else:
+            params = {"action": "parse", "oldid": revid, "prop": "text", "format": "json", "formatversion": 2}
+            r = self.http.get(WIKI_API, params=params)
+            if r.status_code != 200:
+                raise SourceUnavailable(f"Wikipedia parse HTTP {r.status_code}")
+            raw = r.content
+            if cache:
+                cache.parent.mkdir(parents=True, exist_ok=True)
+                cache.write_bytes(raw)
         html = json.loads(raw)["parse"]["text"]
         return parse_constituents_html(html), raw
 

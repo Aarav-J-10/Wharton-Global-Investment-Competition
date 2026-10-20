@@ -22,6 +22,9 @@ def test_acquire_wiring(tmp_path, monkeypatch):
     from wic.sources import universe as U
 
     class FakeWiki:
+        def __init__(self, *a, **k):
+            pass
+
         def snapshot(self, cutoff, out_dir):
             (out_dir / "raw").mkdir(parents=True, exist_ok=True)
             (out_dir / "raw" / "rev.json").write_text("{}")
@@ -38,6 +41,9 @@ def test_acquire_wiring(tmp_path, monkeypatch):
         uni[["ticker", "cik"]].assign(sec_name="x"), {"source": "fake"}))
     meta = pd.DataFrame({"cik": sorted(facts["cik"].unique()), "url": "u", "raw_sha256": "h", "entity_name": "e"})
     monkeypatch.setattr(S, "fetch_all_facts", lambda ciks, cache_dir=None: (facts, meta))
+    from wic.sources import sec_filings as SF
+    monkeypatch.setattr(SF, "supplement_issuer", lambda http, c, present, since, cache: (
+        pd.DataFrame(columns=S.COLUMNS), [{"cik": c, "accn": "x", "status": "SUPPLEMENTED"}]))
     monkeypatch.setattr(P, "download_prices", lambda tickers, start, end: (
         prices[prices["ticker"].isin(tickers) & (prices["date"] <= end)], {"provider": "fake"}))
 

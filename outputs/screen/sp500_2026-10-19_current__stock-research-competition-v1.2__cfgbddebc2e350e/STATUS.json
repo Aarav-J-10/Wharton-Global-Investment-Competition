@@ -1,0 +1,16 @@
+{
+  "complete_pct_of_eligible": 66.41,
+  "complete_scores": 259,
+  "constituents": 503,
+  "cutoff": "2026-10-19",
+  "eligible": 390,
+  "market_session": "2026-10-19",
+  "publication_gates": {
+    "at_least_10_complete_scores": true,
+    "independent_validator_passed": true,
+    "no_source_dates_after_cutoff": true,
+    "snapshot_hashes_verified": true
+  },
+  "run_id": "sp500_2026-10-19_current__stock-research-competition-v1.2__cfgbddebc2e350e",
+  "status": "RANKING_PUBLISHED"
+}

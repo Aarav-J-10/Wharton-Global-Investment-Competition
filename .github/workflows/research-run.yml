@@ -18,13 +18,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 300
     env:
-      # SEC fair-access policy requires a contact; set the WIC_SEC_USER_AGENT
-      # repository secret to "Your Name your@email". Never written to artifacts.
-      WIC_SEC_USER_AGENT: ${{ secrets.WIC_SEC_USER_AGENT || format('WIC-S003 research {0}@users.noreply.github.com', github.repository_owner) }}
+      # SEC fair-access policy requires a real contact (no-reply addresses get
+      # HTTP 403). Set repository secret WIC_SEC_USER_AGENT = "Your Name your@email".
+      # It is sent only to sec.gov and never written to artifacts.
+      WIC_SEC_USER_AGENT: ${{ secrets.WIC_SEC_USER_AGENT }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12', cache: pip}
+      - name: Check SEC contact secret
+        run: test -n "$WIC_SEC_USER_AGENT" || { echo "::error::Add the WIC_SEC_USER_AGENT repository secret"; exit 1; }
       - run: pip install -r requirements.txt
       - run: python -m pytest -q
       - name: Acquire snapshot

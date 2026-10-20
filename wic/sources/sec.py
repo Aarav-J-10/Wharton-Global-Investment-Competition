@@ -66,8 +66,8 @@ def extract_facts(payload: dict, cik: int) -> pd.DataFrame:
     # every later version whose value changed (restatements stay point-in-time).
     df = df.sort_values(["concept", "unit", "start", "end", "filed", "accn"], na_position="first")
     key = ["concept", "unit", "start", "end"]
-    changed = df.groupby(key, dropna=False)["val"].transform(lambda s: s.ne(s.shift()))
-    return df.loc[changed].reset_index(drop=True)
+    prev = df.groupby(key, dropna=False, sort=False)["val"].shift()
+    return df.loc[df["val"].ne(prev)].reset_index(drop=True)
 
 
 def fetch_company_facts(http: PoliteSession, cik: int, cache_dir: Path | None) -> tuple[pd.DataFrame, dict]:

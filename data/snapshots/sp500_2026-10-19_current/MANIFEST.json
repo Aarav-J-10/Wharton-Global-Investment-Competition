@@ -1,0 +1,46 @@
+{
+  "files": {
+    "SOURCES.json": {
+      "bytes": 2462,
+      "sha256": "3a0c644c510f6be62d4d5d7c40c884e702fa85ec49857f5e7312cae9f70168d0"
+    },
+    "membership_history.csv": {
+      "bytes": 5530907,
+      "sha256": "36326709d46d6cd25834de5df457b16f5f96fad3a06b9beac28f7b88aa0b0d54"
+    },
+    "prices.parquet": {
+      "bytes": 24081495,
+      "sha256": "03fdf9ef160296227e84fcf864fd97e4d18b9427bb99621b26c23bb3d8df629a"
+    },
+    "raw/wikipedia_sp500_rev1380159481.json": {
+      "bytes": 300912,
+      "sha256": "ee2f3d4ec68d2f7c789b318bdb332581344c1907844dc82d754c76fa59d18330"
+    },
+    "sec_facts.parquet": {
+      "bytes": 6724034,
+      "sha256": "a531c924c04744bf468746e25a965a03b43c75a8b540c40621bfc965500f70b6"
+    },
+    "sec_filing_supplement.csv": {
+      "bytes": 23058,
+      "sha256": "0eb4a0e5ec9d27d6a5b4fadc82938eeeb6c2a70945ee2b7b5093dd25abbc49f8"
+    },
+    "sec_sources.csv": {
+      "bytes": 100565,
+      "sha256": "b84443fd01ef702f9eb83bbb5520747d9fc4bfd63fa4c3e2d72cca467f64debe"
+    },
+    "sec_ticker_map.csv": {
+      "bytes": 387850,
+      "sha256": "50fd3c6e526075cd2174b8a13f7839181e0c5e73f3359d46e6a89e694821c132"
+    },
+    "sector_history.csv": {
+      "bytes": 28541,
+      "sha256": "e914ec6ac74f7aecfc555d75ddf3d55f7c26622790b493db38196a9f4e745963"
+    },
+    "universe.csv": {
+      "bytes": 41337,
+      "sha256": "445575450302f465178cc4724aa320dcde6e9cb11b7e9b48f40f78d371cec4f8"
+    }
+  },
+  "sealed_utc": "2026-10-20T18:07:51+00:00",
+  "snapshot_id": "sp500_2026-10-19_current"
+}

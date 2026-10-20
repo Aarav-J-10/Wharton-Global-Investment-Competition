@@ -1,0 +1,184 @@
+{
+  "DIVERSIFIED_VIEW": {
+    "asof": "2026-10-19",
+    "avg_pairwise_correlation": 0.07265184077600464,
+    "beta_vs_spy": 1.334536123376793,
+    "diversification_ratio": 2.089069651682604,
+    "ex_ante_vol_252": 0.23614311089364434,
+    "max_pairwise_correlation": 0.781034490529948,
+    "names": 10,
+    "per_name": [
+      {
+        "beta_252": 0.40695305647506036,
+        "corr_to_spy": 0.15507852163081798,
+        "risk_contribution": 0.04881266593620687,
+        "ticker": "INCY",
+        "vol_252": 0.33348450928724005
+      },
+      {
+        "beta_252": 0.9726055307277607,
+        "corr_to_spy": 0.2440224718471251,
+        "risk_contribution": 0.06548513421626949,
+        "ticker": "EXPE",
+        "vol_252": 0.5065122061678785
+      },
+      {
+        "beta_252": 3.3527898752509104,
+        "corr_to_spy": 0.525456345874094,
+        "risk_contribution": 0.2599784785241679,
+        "ticker": "MU",
+        "vol_252": 0.8108727350333726
+      },
+      {
+        "beta_252": 1.9027991049759907,
+        "corr_to_spy": 0.6487137302617836,
+        "risk_contribution": 0.0758854501855915,
+        "ticker": "NVDA",
+        "vol_252": 0.37275446239416804
+      },
+      {
+        "beta_252": -0.49652520331216654,
+        "corr_to_spy": -0.24334858363059172,
+        "risk_contribution": -0.01625870050991,
+        "ticker": "MO",
+        "vol_252": 0.2592957973997362
+      },
+      {
+        "beta_252": 3.9828379544498067,
+        "corr_to_spy": 0.4456365395073703,
+        "risk_contribution": 0.3695950731765508,
+        "ticker": "SNDK",
+        "vol_252": 1.135781647226889
+      },
+      {
+        "beta_252": 0.6341574128125973,
+        "corr_to_spy": 0.20259346105542228,
+        "risk_contribution": 0.04273681068611833,
+        "ticker": "DXCM",
+        "vol_252": 0.3977907245999496
+      },
+      {
+        "beta_252": 1.031827836752253,
+        "corr_to_spy": 0.29611997770089504,
+        "risk_contribution": 0.0645175761314287,
+        "ticker": "DECK",
+        "vol_252": 0.44281521527136347
+      },
+      {
+        "beta_252": -0.18640916879449568,
+        "corr_to_spy": -0.08315642967455178,
+        "risk_contribution": -0.007156738476516037,
+        "ticker": "PM",
+        "vol_252": 0.2848750655686919
+      },
+      {
+        "beta_252": 1.7443248344302213,
+        "corr_to_spy": 0.5698331385526217,
+        "risk_contribution": 0.09640425013009252,
+        "ticker": "DAL",
+        "vol_252": 0.38901170126903145
+      }
+    ],
+    "sector_weights": {
+      "Consumer Discretionary": 0.2,
+      "Consumer Staples": 0.2,
+      "Health Care": 0.2,
+      "Industrials": 0.1,
+      "Information Technology": 0.3
+    },
+    "spy_vol_252": 0.12708169619120022,
+    "status": "OK",
+    "weighting": "EQUAL (illustrative; not a sizing rule)"
+  },
+  "TOP10": {
+    "asof": "2026-10-19",
+    "avg_pairwise_correlation": 0.07265184077600464,
+    "beta_vs_spy": 1.334536123376793,
+    "diversification_ratio": 2.089069651682604,
+    "ex_ante_vol_252": 0.23614311089364434,
+    "max_pairwise_correlation": 0.781034490529948,
+    "names": 10,
+    "per_name": [
+      {
+        "beta_252": 0.40695305647506036,
+        "corr_to_spy": 0.15507852163081798,
+        "risk_contribution": 0.04881266593620687,
+        "ticker": "INCY",
+        "vol_252": 0.33348450928724005
+      },
+      {
+        "beta_252": 0.9726055307277607,
+        "corr_to_spy": 0.2440224718471251,
+        "risk_contribution": 0.06548513421626949,
+        "ticker": "EXPE",
+        "vol_252": 0.5065122061678785
+      },
+      {
+        "beta_252": 3.3527898752509104,
+        "corr_to_spy": 0.525456345874094,
+        "risk_contribution": 0.2599784785241679,
+        "ticker": "MU",
+        "vol_252": 0.8108727350333726
+      },
+      {
+        "beta_252": 1.9027991049759907,
+        "corr_to_spy": 0.6487137302617836,
+        "risk_contribution": 0.0758854501855915,
+        "ticker": "NVDA",
+        "vol_252": 0.37275446239416804
+      },
+      {
+        "beta_252": -0.49652520331216654,
+        "corr_to_spy": -0.24334858363059172,
+        "risk_contribution": -0.01625870050991,
+        "ticker": "MO",
+        "vol_252": 0.2592957973997362
+      },
+      {
+        "beta_252": 3.9828379544498067,
+        "corr_to_spy": 0.4456365395073703,
+        "risk_contribution": 0.3695950731765508,
+        "ticker": "SNDK",
+        "vol_252": 1.135781647226889
+      },
+      {
+        "beta_252": 0.6341574128125973,
+        "corr_to_spy": 0.20259346105542228,
+        "risk_contribution": 0.04273681068611833,
+        "ticker": "DXCM",
+        "vol_252": 0.3977907245999496
+      },
+      {
+        "beta_252": 1.031827836752253,
+        "corr_to_spy": 0.29611997770089504,
+        "risk_contribution": 0.0645175761314287,
+        "ticker": "DECK",
+        "vol_252": 0.44281521527136347
+      },
+      {
+        "beta_252": -0.18640916879449568,
+        "corr_to_spy": -0.08315642967455178,
+        "risk_contribution": -0.007156738476516037,
+        "ticker": "PM",
+        "vol_252": 0.2848750655686919
+      },
+      {
+        "beta_252": 1.7443248344302213,
+        "corr_to_spy": 0.5698331385526217,
+        "risk_contribution": 0.09640425013009252,
+        "ticker": "DAL",
+        "vol_252": 0.38901170126903145
+      }
+    ],
+    "sector_weights": {
+      "Consumer Discretionary": 0.2,
+      "Consumer Staples": 0.2,
+      "Health Care": 0.2,
+      "Industrials": 0.1,
+      "Information Technology": 0.3
+    },
+    "spy_vol_252": 0.12708169619120022,
+    "status": "OK",
+    "weighting": "EQUAL (illustrative; not a sizing rule)"
+  }
+}

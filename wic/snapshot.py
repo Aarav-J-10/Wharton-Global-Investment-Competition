@@ -55,18 +55,22 @@ def _read_parquet(snap: Path, stem: str) -> pd.DataFrame:
 
 
 def acquire(cutoff: pd.Timestamp, root: Path, *, history_start: str = "2009-01-01",
-            sector_history_start: str = "2011-01-01", cache_dir: Path | None = None) -> Path:
+            sector_history_start: str = "2011-01-01", cache_dir: Path | None = None,
+            current_only: bool = False) -> Path:
+    """current_only=True skips former constituents (enough for the live screen, not the backtest)."""
     from .sources import prices as P
     from .sources import sec as S
     from .sources import universe as U
     from .sources.http import SourceUnavailable
 
-    snap = root / f"sp500_{cutoff.date().isoformat()}"
+    snap = root / f"sp500_{cutoff.date().isoformat()}{'_current' if current_only else ''}"
     snap.mkdir(parents=True, exist_ok=True)
-    sources: dict = {"cutoff": cutoff.date().isoformat(), "acquired_utc": utc_now()}
+    sources: dict = {"cutoff": cutoff.date().isoformat(), "acquired_utc": utc_now(),
+                     "scope": "CURRENT_MEMBERS_ONLY" if current_only else "CURRENT_AND_HISTORICAL_MEMBERS"}
 
     # 1. Current universe (revision pinned at cutoff), fallback to GitHub mirror.
-    wiki = U.WikipediaUniverse()
+    wiki_cache = cache_dir.parent / "wikipedia" if cache_dir else None
+    wiki = U.WikipediaUniverse(cache_dir=wiki_cache)
     try:
         uni, meta = wiki.snapshot(cutoff, snap)
     except (SourceUnavailable, ValueError, KeyError) as exc:
@@ -79,13 +83,19 @@ def acquire(cutoff: pd.Timestamp, root: Path, *, history_start: str = "2009-01-0
     # 2. Point-in-time membership + sector/CIK label history for the backtest.
     hist, hmeta = U.fetch_membership_history()
     sources["membership_history"] = hmeta
-    try:
-        sect, smeta = wiki.sector_history(sector_history_start, cutoff, snap)
-        sources["sector_history"] = {"source": "Wikipedia semiannual revisions", "revisions": smeta}
-    except SourceUnavailable as exc:
-        sect = uni.assign(label_date=cutoff)[["label_date", "ticker", "yahoo_ticker", "security", "sector", "cik"]]
-        sources["sector_history"] = {"source": "current universe only (historical revisions unavailable)",
-                                     "error": str(exc)[:300]}
+    current_labels = uni.assign(label_date=cutoff)[["label_date", "ticker", "yahoo_ticker", "security", "sector", "cik"]]
+    if current_only:
+        sect = current_labels
+        sources["sector_history"] = {"source": "current universe only (current_only snapshot)"}
+    else:
+        try:
+            sect, smeta = U.WikipediaUniverse(min_interval=4.0, cache_dir=wiki_cache).sector_history(sector_history_start, cutoff, snap)
+            sect = pd.concat([sect.rename(columns={"gics_sector": "sector"}), current_labels], ignore_index=True)
+            sources["sector_history"] = {"source": "Wikipedia semiannual revisions + cutoff revision", "revisions": smeta}
+        except SourceUnavailable as exc:
+            sect = current_labels
+            sources["sector_history"] = {"source": "current universe only (historical revisions unavailable)",
+                                         "error": str(exc)[:300]}
     sect = sect.rename(columns={"gics_sector": "sector"})
 
     # 3. SEC ticker map fills missing CIKs.
@@ -100,9 +110,18 @@ def acquire(cutoff: pd.Timestamp, root: Path, *, history_start: str = "2009-01-0
 
     # 4. Prices: current members + every member since backtest window + benchmarks.
     since = hist.loc[hist["date"] >= pd.Timestamp(history_start)]
-    hist_tickers = set().union(*[set(t.split(",")) for t in since["tickers"]])
+    hist_tickers = set() if current_only else set().union(*[set(t.split(",")) for t in since["tickers"]])
     tickers = set(uni["yahoo_ticker"]) | {U.yahoo_symbol(t) for t in hist_tickers} | set(BENCHMARKS)
-    prices, pmeta = P.download_prices(sorted(tickers), history_start, cutoff)
+    pcache = cache_dir.parent / f"prices_{cutoff.date()}_{'current' if current_only else 'full'}.parquet" if cache_dir else None
+    if pcache and pcache.exists():
+        prices = pd.read_parquet(pcache)
+        pmeta = json.loads(pcache.with_suffix(".json").read_text())
+    else:
+        prices, pmeta = P.download_prices(sorted(tickers), history_start, cutoff)
+        if pcache:
+            pcache.parent.mkdir(parents=True, exist_ok=True)
+            prices.to_parquet(pcache, index=False)
+            pcache.with_suffix(".json").write_text(json.dumps(pmeta))
     problems = P.validate_prices(prices)
     if problems:
         raise SourceUnavailable("Price validation failed: " + "; ".join(problems))
@@ -114,6 +133,24 @@ def acquire(cutoff: pd.Timestamp, root: Path, *, history_start: str = "2009-01-0
     # 5. SEC companyfacts for every CIK we might score.
     ciks = sorted(set(uni["cik"].dropna().astype(int)) | set(sect["cik"].dropna().astype(int)))
     facts, fmeta = S.fetch_all_facts(ciks, cache_dir=cache_dir)
+    # 5b. Filings listed in EDGAR submissions but missing from companyfacts.
+    from concurrent.futures import ThreadPoolExecutor
+
+    from .sources.sec_filings import supplement_issuer
+    present = facts.groupby("cik")["accn"].agg(set).to_dict()
+    since = (cutoff - pd.DateOffset(years=2)).date().isoformat()
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        sup = list(ex.map(lambda c: supplement_issuer(http, c, present.get(c, set()), since, cache_dir), ciks))
+    sup_facts = [f for f, _ in sup if len(f)]
+    sup_log = pd.DataFrame([row for _, log in sup for row in log])
+    if sup_facts:
+        facts = pd.concat([facts, *sup_facts], ignore_index=True)
+    facts = facts.loc[facts["filed"] <= cutoff].sort_values(["cik", "concept", "end", "filed"]).reset_index(drop=True)
+    sources["sec_filing_supplement"] = {
+        "purpose": "10-K/10-Q filings in EDGAR submissions but absent from companyfacts; facts read from each "
+                   "filing's XBRL instance", "since": since,
+        "filings_supplemented": int((sup_log["status"] == "SUPPLEMENTED").sum()) if len(sup_log) else 0,
+        "instances_not_found": int((sup_log["status"] == "INSTANCE_NOT_FOUND").sum()) if len(sup_log) else 0}
     sources["sec_companyfacts"] = {"issuers_requested": len(ciks),
                                    "issuers_with_facts": int(facts["cik"].nunique()),
                                    "fact_rows": int(len(facts)),
@@ -126,6 +163,7 @@ def acquire(cutoff: pd.Timestamp, root: Path, *, history_start: str = "2009-01-0
     _parquet(prices, snap / "prices.parquet")
     _parquet(facts, snap / "sec_facts.parquet")
     write_csv(snap / "sec_sources.csv", fmeta.sort_values("cik"))
+    write_csv(snap / "sec_filing_supplement.csv", sup_log if len(sup_log) else pd.DataFrame(columns=["cik", "accn"]))
     write_csv(snap / "sec_ticker_map.csv", tmap.sort_values("ticker"))
     write_json(snap / "SOURCES.json", sources)
     seal(snap)

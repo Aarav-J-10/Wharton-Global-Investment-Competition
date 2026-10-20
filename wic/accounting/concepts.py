@@ -46,6 +46,7 @@ CAPEX = (
     "PaymentsToAcquireProductiveAssets",
     "PaymentsForCapitalImprovements",
     "PaymentsToAcquireOtherPropertyPlantAndEquipment",
+    "PaymentsToAcquireOtherProductiveAssets",  # e.g. Verizon tags total capex here
 )
 EPS = ("EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted", "EarningsPerShareBasic")
 

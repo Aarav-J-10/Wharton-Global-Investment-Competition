@@ -27,7 +27,7 @@ def _download_batch(tickers: list[str], start: str, end: pd.Timestamp) -> pd.Dat
 
     data = yf.download(tickers, start=start, end=(end + pd.Timedelta(days=1)).strftime("%Y-%m-%d"),
                        auto_adjust=False, actions=True, progress=False, group_by="ticker",
-                       threads=True, timeout=60)
+                       threads=False, timeout=60)
     if data is None or data.empty:
         return pd.DataFrame(columns=["date", "ticker", *FIELDS])
     frames = []
@@ -95,14 +95,19 @@ def download_prices(tickers: list[str], start: str, end: pd.Timestamp, batch: in
     return prices.reset_index(drop=True), meta
 
 
+RATE_SERIES = {"^IRX"}  # yields, not prices: may legitimately be 0 or negative
+
+
 def validate_prices(prices: pd.DataFrame) -> list[str]:
     problems = []
     if prices.duplicated(["ticker", "date"]).any():
         problems.append("duplicate (ticker, date) rows")
+    is_rate = prices["ticker"].isin(RATE_SERIES)
     for col in ("close", "adj_close"):
-        bad = prices[col].le(0) | ~np.isfinite(prices[col])
+        bad = (~is_rate & prices[col].le(0)) | ~np.isfinite(prices[col])
         if bad.any():
-            problems.append(f"{int(bad.sum())} nonpositive/nonfinite {col} values")
+            where = prices.loc[bad, "ticker"].value_counts().head(5).to_dict()
+            problems.append(f"{int(bad.sum())} nonpositive/nonfinite {col} values {where}")
     if prices.volume.lt(0).any():
         problems.append("negative volume")
     return problems

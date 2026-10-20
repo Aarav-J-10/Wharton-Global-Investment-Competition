@@ -1,0 +1,13 @@
+sector,constituents,outside_standard_model,duplicate_classes,data_blocked_pre_scoring,eligible,complete_scores,roic_valid,roic_scored,fcf_margin_valid,fcf_margin_scored,net_debt_ebitda_valid,net_debt_ebitda_scored,fcf_yield_valid,fcf_yield_scored,ev_ebit_valid,ev_ebit_scored,revenue_cagr_3y_valid,revenue_cagr_3y_scored,eps_cagr_3y_valid,eps_cagr_3y_scored,momentum_12_1_valid,momentum_12_1_scored,momentum_6_1_valid,momentum_6_1_scored,volatility_252_valid,volatility_252_scored,max_drawdown_252_valid,max_drawdown_252_scored
+Communication Services,22,0,3,0,19,0,17,0,16,0,16,0,14,0,13,0,18,0,10,0,19,0,19,0,19,0,19,0
+Consumer Discretionary,47,0,0,0,47,33,36,36,45,45,37,37,44,44,38,39,47,47,35,45,47,47,47,47,47,47,47,47
+Consumer Staples,34,0,0,1,33,27,30,30,33,33,29,30,30,30,26,28,33,33,27,30,33,33,33,33,33,33,33,33
+Energy,21,0,0,0,21,0,18,0,14,0,18,0,13,0,18,0,19,0,18,0,21,21,21,21,21,21,21,21
+Financials,76,76,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Health Care,60,0,0,0,60,54,57,57,58,58,54,57,58,58,54,59,60,60,54,60,60,60,60,60,60,60,60,60
+Industrials,83,0,0,2,81,65,68,68,78,78,72,72,79,79,72,72,80,80,75,81,81,81,81,81,81,81,81,81
+Information Technology,75,0,0,1,74,60,64,64,74,74,67,67,74,74,68,70,74,74,57,72,74,74,74,74,74,74,74,74
+Materials,24,0,0,0,24,0,21,21,22,22,22,22,22,22,17,0,24,24,16,0,24,24,24,24,24,24,24,24
+Real Estate,30,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Utilities,31,0,0,0,31,20,28,28,26,26,28,28,26,26,31,31,31,31,27,30,31,31,31,31,31,31,31,31
+ALL,503,106,3,4,390,259,339,304,366,336,343,313,360,333,337,299,386,349,319,318,390,371,390,371,390,371,390,371

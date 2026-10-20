@@ -1,0 +1,12 @@
+factor,label,family,weight,direction,formula
+roic,ROIC,QUALITY,0.12,HIGHER_IS_BETTER,"EBIT_TTM*(1-effective_tax_rate) / average(IC_latest, IC_prior_year)"
+fcf_margin,FCF margin,QUALITY,0.10000000000000001,HIGHER_IS_BETTER,(CFO_TTM - CapEx_TTM) / Revenue_TTM
+net_debt_ebitda,Net debt / EBITDA,QUALITY,0.080000000000000002,LOWER_IS_BETTER,(Debt - Cash) / (EBIT_TTM + D&A_TTM); EBITDA<=0 -> unfavorable sentinel
+fcf_yield,FCF yield,VALUATION,0.10000000000000001,HIGHER_IS_BETTER,FCF_TTM / market capitalization
+ev_ebit,EV / EBIT,VALUATION,0.10000000000000001,LOWER_IS_BETTER,(MarketCap + Debt + Preferred + NCI - Cash) / EBIT_TTM; EBIT<=0 -> unfavorable sentinel
+revenue_cagr_3y,Revenue CAGR 3Y,GROWTH,0.10000000000000001,HIGHER_IS_BETTER,(Rev_FY0 / Rev_FY-3)^(1/3) - 1
+eps_cagr_3y,EPS CAGR 3Y,GROWTH,0.10000000000000001,HIGHER_IS_BETTER,"(EPS_FY0 / EPS_FY-3)^(1/3) - 1, split-adjusted; nonpositive endpoint -> unfavorable sentinel"
+momentum_12_1,Momentum 12-1,MOMENTUM,0.12,HIGHER_IS_BETTER,TRI[t-21] / TRI[t-252] - 1
+momentum_6_1,Momentum 6-1,MOMENTUM,0.080000000000000002,HIGHER_IS_BETTER,TRI[t-21] / TRI[t-126] - 1
+volatility_252,Volatility 252d,RISK,0.050000000000000003,LOWER_IS_BETTER,stdev(252 daily TR returns) * sqrt(252)
+max_drawdown_252,Max drawdown 252d,RISK,0.050000000000000003,LOWER_IS_BETTER,max(1 - TRI/running_max(TRI)) over 252 sessions

@@ -18,7 +18,8 @@ OUT = ROOT / "outputs"
 
 
 def _latest_snapshot() -> Path:
-    snaps = sorted(p for p in DATA.glob("sp500_*") if (p / "MANIFEST.json").exists())
+    snaps = sorted((p for p in DATA.glob("sp500_*") if (p / "MANIFEST.json").exists()),
+                   key=lambda p: (p.name.replace("_current", ""), not p.name.endswith("_current")))
     if not snaps:
         sys.exit("No snapshot found; run `python -m wic acquire` first")
     return snaps[-1]
@@ -28,7 +29,8 @@ def cmd_acquire(a) -> Path:
     from .snapshot import acquire, last_completed_session
 
     cutoff = pd.Timestamp(a.cutoff) if a.cutoff else last_completed_session()
-    snap = acquire(cutoff, Path(a.data), cache_dir=Path(a.cache) if a.cache else None)
+    snap = acquire(cutoff, Path(a.data), cache_dir=Path(a.cache) if a.cache else None,
+                   current_only=a.current_only)
     print(f"snapshot: {snap}")
     return snap
 
@@ -91,6 +93,8 @@ def main(argv=None) -> int:
         s.add_argument("--cutoff", help="YYYY-MM-DD (default: last completed NYSE session)")
         s.add_argument("--start", help="backtest start date override")
         s.add_argument("--run", help="screen run directory to verify")
+        s.add_argument("--current-only", action="store_true",
+                       help="acquire current constituents only (live screen; not sufficient for the backtest)")
     a = p.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(message)s")
     if a.cmd == "acquire":

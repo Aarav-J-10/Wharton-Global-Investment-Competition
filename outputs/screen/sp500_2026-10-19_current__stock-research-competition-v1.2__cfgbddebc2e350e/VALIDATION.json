@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "composite_only_when_all_11": true,
+    "composite_recomputed_match": true,
+    "direction_monotone": true,
+    "family_scores_match": true,
+    "no_buy_state": true,
+    "rank_order_and_tiebreak": true,
+    "ranks_contiguous": true,
+    "scores_recomputed_match": true,
+    "scores_within_0_100": true,
+    "sentinels_scored_zero": true,
+    "source_dates_le_cutoff": true,
+    "top10_is_rank_1_to_10": true,
+    "weights_sum_to_one": true
+  },
+  "composites_checked": 259,
+  "notes": [],
+  "passed": true,
+  "scored_rows_checked": 3736
+}
