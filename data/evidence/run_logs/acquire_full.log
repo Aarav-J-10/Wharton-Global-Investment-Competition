@@ -1,0 +1,1183 @@
+2026-10-20 18:30:08,472 yfinance $ALXN: possibly delisted; no timezone found
+2026-10-20 18:30:10,811 yfinance $AABA: possibly delisted; no timezone found
+2026-10-20 18:30:13,134 yfinance $AGN: possibly delisted; no timezone found
+2026-10-20 18:30:13,602 yfinance $ACS: possibly delisted; no timezone found
+2026-10-20 18:30:14,331 yfinance $ABMD: possibly delisted; no timezone found
+2026-10-20 18:30:15,333 yfinance $AKS: possibly delisted; no timezone found
+2026-10-20 18:30:17,338 yfinance $ABC: possibly delisted; no timezone found
+2026-10-20 18:30:18,206 yfinance $ADS: possibly delisted; no timezone found
+2026-10-20 18:30:20,394 yfinance $ALTR: possibly delisted; no timezone found
+2026-10-20 18:30:23,014 yfinance $ACAS: possibly delisted; no timezone found
+2026-10-20 18:30:24,396 yfinance $AET: possibly delisted; no timezone found
+2026-10-20 18:30:24,964 yfinance 
+11 Failed downloads:
+2026-10-20 18:30:24,964 yfinance ['ALXN', 'AABA', 'AGN', 'ACS', 'ABMD', 'AKS', 'ABC', 'ADS', 'ALTR', 'ACAS', 'AET']: possibly delisted; no timezone found
+2026-10-20 18:30:25,386 yfinance $AABA: possibly delisted; no timezone found
+2026-10-20 18:30:25,386 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,387 yfinance ['AABA']: possibly delisted; no timezone found
+2026-10-20 18:30:25,390 yfinance $ABC: possibly delisted; no timezone found
+2026-10-20 18:30:25,391 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,391 yfinance ['ABC']: possibly delisted; no timezone found
+2026-10-20 18:30:25,394 yfinance $ABMD: possibly delisted; no timezone found
+2026-10-20 18:30:25,394 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,394 yfinance ['ABMD']: possibly delisted; no timezone found
+2026-10-20 18:30:25,397 yfinance $ACAS: possibly delisted; no timezone found
+2026-10-20 18:30:25,398 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,398 yfinance ['ACAS']: possibly delisted; no timezone found
+2026-10-20 18:30:25,402 yfinance $ACS: possibly delisted; no timezone found
+2026-10-20 18:30:25,403 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,403 yfinance ['ACS']: possibly delisted; no timezone found
+2026-10-20 18:30:25,406 yfinance $ADS: possibly delisted; no timezone found
+2026-10-20 18:30:25,407 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,407 yfinance ['ADS']: possibly delisted; no timezone found
+2026-10-20 18:30:25,411 yfinance $AET: possibly delisted; no timezone found
+2026-10-20 18:30:25,411 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,411 yfinance ['AET']: possibly delisted; no timezone found
+2026-10-20 18:30:25,415 yfinance $AGN: possibly delisted; no timezone found
+2026-10-20 18:30:25,415 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,415 yfinance ['AGN']: possibly delisted; no timezone found
+2026-10-20 18:30:25,420 yfinance $AKS: possibly delisted; no timezone found
+2026-10-20 18:30:25,420 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,420 yfinance ['AKS']: possibly delisted; no timezone found
+2026-10-20 18:30:25,424 yfinance $ALTR: possibly delisted; no timezone found
+2026-10-20 18:30:25,425 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,425 yfinance ['ALTR']: possibly delisted; no timezone found
+2026-10-20 18:30:25,429 yfinance $ALXN: possibly delisted; no timezone found
+2026-10-20 18:30:25,429 yfinance 
+1 Failed download:
+2026-10-20 18:30:25,429 yfinance ['ALXN']: possibly delisted; no timezone found
+2026-10-20 18:30:28,031 yfinance $ANSS: possibly delisted; no timezone found
+2026-10-20 18:30:28,498 yfinance $ARG: possibly delisted; no timezone found
+2026-10-20 18:30:29,938 yfinance $BCR: possibly delisted; no timezone found
+2026-10-20 18:30:31,031 yfinance $ANRZQ: possibly delisted; no timezone found
+2026-10-20 18:30:31,902 yfinance $AVP: possibly delisted; no timezone found
+2026-10-20 18:30:32,366 yfinance $APOL: possibly delisted; no timezone found
+2026-10-20 18:30:32,794 yfinance $BDK: possibly delisted; no timezone found
+2026-10-20 18:30:33,878 yfinance $ATVI: possibly delisted; no timezone found
+2026-10-20 18:30:35,587 yfinance $ARNC: possibly delisted; no timezone found
+2026-10-20 18:30:37,301 yfinance $AYE: possibly delisted; no timezone found
+2026-10-20 18:30:38,394 yfinance $ATGE: possibly delisted; no timezone found
+2026-10-20 18:30:39,260 yfinance $ANTM: possibly delisted; no timezone found
+2026-10-20 18:30:40,856 yfinance $AVB: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:30:42,168 yfinance $ANDV: possibly delisted; no timezone found
+2026-10-20 18:30:46,260 yfinance 
+14 Failed downloads:
+2026-10-20 18:30:46,260 yfinance ['ANSS', 'ARG', 'BCR', 'ANRZQ', 'AVP', 'APOL', 'BDK', 'ATVI', 'ARNC', 'AYE', 'ATGE', 'ANTM', 'ANDV']: possibly delisted; no timezone found
+2026-10-20 18:30:46,260 yfinance ['AVB']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:30:46,624 yfinance $ANDV: possibly delisted; no timezone found
+2026-10-20 18:30:46,625 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,625 yfinance ['ANDV']: possibly delisted; no timezone found
+2026-10-20 18:30:46,628 yfinance $ANRZQ: possibly delisted; no timezone found
+2026-10-20 18:30:46,629 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,629 yfinance ['ANRZQ']: possibly delisted; no timezone found
+2026-10-20 18:30:46,632 yfinance $ANSS: possibly delisted; no timezone found
+2026-10-20 18:30:46,632 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,632 yfinance ['ANSS']: possibly delisted; no timezone found
+2026-10-20 18:30:46,635 yfinance $ANTM: possibly delisted; no timezone found
+2026-10-20 18:30:46,636 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,636 yfinance ['ANTM']: possibly delisted; no timezone found
+2026-10-20 18:30:46,639 yfinance $APOL: possibly delisted; no timezone found
+2026-10-20 18:30:46,639 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,640 yfinance ['APOL']: possibly delisted; no timezone found
+2026-10-20 18:30:46,643 yfinance $ARG: possibly delisted; no timezone found
+2026-10-20 18:30:46,643 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,643 yfinance ['ARG']: possibly delisted; no timezone found
+2026-10-20 18:30:46,647 yfinance $ARNC: possibly delisted; no timezone found
+2026-10-20 18:30:46,648 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,648 yfinance ['ARNC']: possibly delisted; no timezone found
+2026-10-20 18:30:46,652 yfinance $ATGE: possibly delisted; no timezone found
+2026-10-20 18:30:46,652 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,652 yfinance ['ATGE']: possibly delisted; no timezone found
+2026-10-20 18:30:46,657 yfinance $ATVI: possibly delisted; no timezone found
+2026-10-20 18:30:46,657 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,657 yfinance ['ATVI']: possibly delisted; no timezone found
+2026-10-20 18:30:46,662 yfinance $AVB: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:30:46,663 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,663 yfinance ['AVB']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:30:46,667 yfinance $AVP: possibly delisted; no timezone found
+2026-10-20 18:30:46,668 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,668 yfinance ['AVP']: possibly delisted; no timezone found
+2026-10-20 18:30:46,672 yfinance $AYE: possibly delisted; no timezone found
+2026-10-20 18:30:46,673 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,673 yfinance ['AYE']: possibly delisted; no timezone found
+2026-10-20 18:30:46,677 yfinance $BCR: possibly delisted; no timezone found
+2026-10-20 18:30:46,678 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,678 yfinance ['BCR']: possibly delisted; no timezone found
+2026-10-20 18:30:46,682 yfinance $BDK: possibly delisted; no timezone found
+2026-10-20 18:30:46,682 yfinance 
+1 Failed download:
+2026-10-20 18:30:46,682 yfinance ['BDK']: possibly delisted; no timezone found
+2026-10-20 18:30:48,141 yfinance $CBS: possibly delisted; no timezone found
+2026-10-20 18:30:48,580 yfinance $BMC: possibly delisted; no timezone found
+2026-10-20 18:30:49,373 yfinance $BLL: possibly delisted; no timezone found
+2026-10-20 18:30:49,882 yfinance $CCE: possibly delisted; no timezone found
+2026-10-20 18:30:50,300 yfinance $CBE: possibly delisted; no timezone found
+2026-10-20 18:30:52,172 yfinance $BK: possibly delisted; no timezone found
+2026-10-20 18:30:53,998 yfinance $BMS: possibly delisted; no timezone found
+2026-10-20 18:30:54,452 yfinance $BHGE: possibly delisted; no timezone found
+2026-10-20 18:30:54,924 yfinance $BNI: possibly delisted; no timezone found
+2026-10-20 18:30:56,122 yfinance $CDAY: possibly delisted; no timezone found
+2026-10-20 18:30:57,059 yfinance $BJS: possibly delisted; no timezone found
+2026-10-20 18:30:57,924 yfinance $BIG: possibly delisted; no timezone found
+2026-10-20 18:31:03,692 yfinance $BXLT: possibly delisted; no timezone found
+2026-10-20 18:31:05,221 yfinance $BRCM: possibly delisted; no timezone found
+2026-10-20 18:31:06,130 yfinance $BTUUQ: possibly delisted; no timezone found
+2026-10-20 18:31:06,923 yfinance $CA: possibly delisted; no timezone found
+2026-10-20 18:31:06,924 yfinance 
+16 Failed downloads:
+2026-10-20 18:31:06,924 yfinance ['CBS', 'BMC', 'BLL', 'CCE', 'CBE', 'BK', 'BMS', 'BHGE', 'BNI', 'CDAY', 'BJS', 'BIG', 'BXLT', 'BRCM', 'BTUUQ', 'CA']: possibly delisted; no timezone found
+2026-10-20 18:31:07,322 yfinance $BHGE: possibly delisted; no timezone found
+2026-10-20 18:31:07,323 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,323 yfinance ['BHGE']: possibly delisted; no timezone found
+2026-10-20 18:31:07,327 yfinance $BIG: possibly delisted; no timezone found
+2026-10-20 18:31:07,327 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,327 yfinance ['BIG']: possibly delisted; no timezone found
+2026-10-20 18:31:07,331 yfinance $BJS: possibly delisted; no timezone found
+2026-10-20 18:31:07,331 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,331 yfinance ['BJS']: possibly delisted; no timezone found
+2026-10-20 18:31:07,335 yfinance $BK: possibly delisted; no timezone found
+2026-10-20 18:31:07,335 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,335 yfinance ['BK']: possibly delisted; no timezone found
+2026-10-20 18:31:07,339 yfinance $BLL: possibly delisted; no timezone found
+2026-10-20 18:31:07,340 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,340 yfinance ['BLL']: possibly delisted; no timezone found
+2026-10-20 18:31:07,344 yfinance $BMC: possibly delisted; no timezone found
+2026-10-20 18:31:07,344 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,344 yfinance ['BMC']: possibly delisted; no timezone found
+2026-10-20 18:31:07,348 yfinance $BMS: possibly delisted; no timezone found
+2026-10-20 18:31:07,349 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,349 yfinance ['BMS']: possibly delisted; no timezone found
+2026-10-20 18:31:07,353 yfinance $BNI: possibly delisted; no timezone found
+2026-10-20 18:31:07,353 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,353 yfinance ['BNI']: possibly delisted; no timezone found
+2026-10-20 18:31:07,357 yfinance $BRCM: possibly delisted; no timezone found
+2026-10-20 18:31:07,358 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,358 yfinance ['BRCM']: possibly delisted; no timezone found
+2026-10-20 18:31:07,362 yfinance $BTUUQ: possibly delisted; no timezone found
+2026-10-20 18:31:07,363 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,363 yfinance ['BTUUQ']: possibly delisted; no timezone found
+2026-10-20 18:31:07,367 yfinance $BXLT: possibly delisted; no timezone found
+2026-10-20 18:31:07,367 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,367 yfinance ['BXLT']: possibly delisted; no timezone found
+2026-10-20 18:31:07,371 yfinance $CA: possibly delisted; no timezone found
+2026-10-20 18:31:07,372 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,372 yfinance ['CA']: possibly delisted; no timezone found
+2026-10-20 18:31:07,376 yfinance $CBE: possibly delisted; no timezone found
+2026-10-20 18:31:07,376 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,376 yfinance ['CBE']: possibly delisted; no timezone found
+2026-10-20 18:31:07,380 yfinance $CBS: possibly delisted; no timezone found
+2026-10-20 18:31:07,380 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,380 yfinance ['CBS']: possibly delisted; no timezone found
+2026-10-20 18:31:07,384 yfinance $CCE: possibly delisted; no timezone found
+2026-10-20 18:31:07,384 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,385 yfinance ['CCE']: possibly delisted; no timezone found
+2026-10-20 18:31:07,388 yfinance $CDAY: possibly delisted; no timezone found
+2026-10-20 18:31:07,389 yfinance 
+1 Failed download:
+2026-10-20 18:31:07,389 yfinance ['CDAY']: possibly delisted; no timezone found
+2026-10-20 18:31:11,074 yfinance $COV: possibly delisted; no timezone found
+2026-10-20 18:31:12,223 yfinance $CMCSK: possibly delisted; no timezone found
+2026-10-20 18:31:14,970 yfinance $COG: possibly delisted; no timezone found
+2026-10-20 18:31:17,155 yfinance $COL: possibly delisted; no timezone found
+2026-10-20 18:31:17,667 yfinance $CERN: possibly delisted; no timezone found
+2026-10-20 18:31:19,423 yfinance $CFN: possibly delisted; no timezone found
+2026-10-20 18:31:21,801 yfinance $CMA: possibly delisted; no timezone found
+2026-10-20 18:31:22,589 yfinance $CEPH: possibly delisted; no timezone found
+2026-10-20 18:31:24,522 yfinance $CPGX: possibly delisted; no timezone found
+2026-10-20 18:31:25,344 yfinance $CITGQ: possibly delisted; no timezone found
+2026-10-20 18:31:26,224 yfinance $CHK: possibly delisted; no timezone found
+2026-10-20 18:31:27,009 yfinance $CELG: possibly delisted; no timezone found
+2026-10-20 18:31:28,199 yfinance 
+12 Failed downloads:
+2026-10-20 18:31:28,199 yfinance ['COV', 'CMCSK', 'COG', 'COL', 'CERN', 'CFN', 'CMA', 'CEPH', 'CPGX', 'CITGQ', 'CHK', 'CELG']: possibly delisted; no timezone found
+2026-10-20 18:31:28,592 yfinance $CELG: possibly delisted; no timezone found
+2026-10-20 18:31:28,592 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,592 yfinance ['CELG']: possibly delisted; no timezone found
+2026-10-20 18:31:28,596 yfinance $CEPH: possibly delisted; no timezone found
+2026-10-20 18:31:28,596 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,596 yfinance ['CEPH']: possibly delisted; no timezone found
+2026-10-20 18:31:28,599 yfinance $CERN: possibly delisted; no timezone found
+2026-10-20 18:31:28,600 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,600 yfinance ['CERN']: possibly delisted; no timezone found
+2026-10-20 18:31:28,603 yfinance $CFN: possibly delisted; no timezone found
+2026-10-20 18:31:28,603 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,603 yfinance ['CFN']: possibly delisted; no timezone found
+2026-10-20 18:31:28,606 yfinance $CHK: possibly delisted; no timezone found
+2026-10-20 18:31:28,607 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,607 yfinance ['CHK']: possibly delisted; no timezone found
+2026-10-20 18:31:28,610 yfinance $CITGQ: possibly delisted; no timezone found
+2026-10-20 18:31:28,610 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,610 yfinance ['CITGQ']: possibly delisted; no timezone found
+2026-10-20 18:31:28,613 yfinance $CMA: possibly delisted; no timezone found
+2026-10-20 18:31:28,614 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,614 yfinance ['CMA']: possibly delisted; no timezone found
+2026-10-20 18:31:28,617 yfinance $CMCSK: possibly delisted; no timezone found
+2026-10-20 18:31:28,617 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,617 yfinance ['CMCSK']: possibly delisted; no timezone found
+2026-10-20 18:31:28,620 yfinance $COG: possibly delisted; no timezone found
+2026-10-20 18:31:28,620 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,621 yfinance ['COG']: possibly delisted; no timezone found
+2026-10-20 18:31:28,624 yfinance $COL: possibly delisted; no timezone found
+2026-10-20 18:31:28,624 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,624 yfinance ['COL']: possibly delisted; no timezone found
+2026-10-20 18:31:28,627 yfinance $COV: possibly delisted; no timezone found
+2026-10-20 18:31:28,628 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,628 yfinance ['COV']: possibly delisted; no timezone found
+2026-10-20 18:31:28,631 yfinance $CPGX: possibly delisted; no timezone found
+2026-10-20 18:31:28,631 yfinance 
+1 Failed download:
+2026-10-20 18:31:28,631 yfinance ['CPGX']: possibly delisted; no timezone found
+2026-10-20 18:31:31,953 yfinance $DF: possibly delisted; no timezone found
+2026-10-20 18:31:33,132 yfinance $DDR: possibly delisted; no timezone found
+2026-10-20 18:31:34,422 yfinance $DISH: possibly delisted; no timezone found
+2026-10-20 18:31:34,982 yfinance $DRE: possibly delisted; no timezone found
+2026-10-20 18:31:35,826 yfinance $CVH: possibly delisted; no timezone found
+2026-10-20 18:31:36,358 yfinance $CXO: possibly delisted; no timezone found
+2026-10-20 18:31:37,116 yfinance $DFS: possibly delisted; no timezone found
+2026-10-20 18:31:37,614 yfinance $DISCK: possibly delisted; no timezone found
+2026-10-20 18:31:38,442 yfinance $DNB: possibly delisted; no timezone found
+2026-10-20 18:31:40,670 yfinance $CTLT: possibly delisted; no timezone found
+2026-10-20 18:31:42,389 yfinance $DAY: possibly delisted; no timezone found
+2026-10-20 18:31:43,577 yfinance $CTX: possibly delisted; no timezone found
+2026-10-20 18:31:44,063 yfinance $CVG: possibly delisted; no timezone found
+2026-10-20 18:31:44,818 yfinance $CTRA: possibly delisted; no timezone found
+2026-10-20 18:31:45,338 yfinance $CTL: possibly delisted; no timezone found
+2026-10-20 18:31:46,198 yfinance $CVC: possibly delisted; no timezone found
+2026-10-20 18:31:46,748 yfinance $DISCA: possibly delisted; no timezone found
+2026-10-20 18:31:47,237 yfinance $DO: possibly delisted; no timezone found
+2026-10-20 18:31:49,064 yfinance $CTXS: possibly delisted; no timezone found
+2026-10-20 18:31:50,108 yfinance $DNR: possibly delisted; no timezone found
+2026-10-20 18:31:50,638 yfinance 
+20 Failed downloads:
+2026-10-20 18:31:50,638 yfinance ['DF', 'DDR', 'DISH', 'DRE', 'CVH', 'CXO', 'DFS', 'DISCK', 'DNB', 'CTLT', 'DAY', 'CTX', 'CVG', 'CTRA', 'CTL', 'CVC', 'DISCA', 'DO', 'CTXS', 'DNR']: possibly delisted; no timezone found
+2026-10-20 18:31:50,983 yfinance $CTL: possibly delisted; no timezone found
+2026-10-20 18:31:50,984 yfinance 
+1 Failed download:
+2026-10-20 18:31:50,984 yfinance ['CTL']: possibly delisted; no timezone found
+2026-10-20 18:31:50,987 yfinance $CTLT: possibly delisted; no timezone found
+2026-10-20 18:31:50,987 yfinance 
+1 Failed download:
+2026-10-20 18:31:50,988 yfinance ['CTLT']: possibly delisted; no timezone found
+2026-10-20 18:31:50,991 yfinance $CTRA: possibly delisted; no timezone found
+2026-10-20 18:31:50,991 yfinance 
+1 Failed download:
+2026-10-20 18:31:50,991 yfinance ['CTRA']: possibly delisted; no timezone found
+2026-10-20 18:31:50,994 yfinance $CTX: possibly delisted; no timezone found
+2026-10-20 18:31:50,994 yfinance 
+1 Failed download:
+2026-10-20 18:31:50,995 yfinance ['CTX']: possibly delisted; no timezone found
+2026-10-20 18:31:50,998 yfinance $CTXS: possibly delisted; no timezone found
+2026-10-20 18:31:50,998 yfinance 
+1 Failed download:
+2026-10-20 18:31:50,998 yfinance ['CTXS']: possibly delisted; no timezone found
+2026-10-20 18:31:51,002 yfinance $CVC: possibly delisted; no timezone found
+2026-10-20 18:31:51,002 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,002 yfinance ['CVC']: possibly delisted; no timezone found
+2026-10-20 18:31:51,006 yfinance $CVG: possibly delisted; no timezone found
+2026-10-20 18:31:51,006 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,006 yfinance ['CVG']: possibly delisted; no timezone found
+2026-10-20 18:31:51,010 yfinance $CVH: possibly delisted; no timezone found
+2026-10-20 18:31:51,010 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,010 yfinance ['CVH']: possibly delisted; no timezone found
+2026-10-20 18:31:51,013 yfinance $CXO: possibly delisted; no timezone found
+2026-10-20 18:31:51,014 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,014 yfinance ['CXO']: possibly delisted; no timezone found
+2026-10-20 18:31:51,017 yfinance $DAY: possibly delisted; no timezone found
+2026-10-20 18:31:51,018 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,018 yfinance ['DAY']: possibly delisted; no timezone found
+2026-10-20 18:31:51,021 yfinance $DDR: possibly delisted; no timezone found
+2026-10-20 18:31:51,022 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,022 yfinance ['DDR']: possibly delisted; no timezone found
+2026-10-20 18:31:51,026 yfinance $DF: possibly delisted; no timezone found
+2026-10-20 18:31:51,027 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,027 yfinance ['DF']: possibly delisted; no timezone found
+2026-10-20 18:31:51,031 yfinance $DFS: possibly delisted; no timezone found
+2026-10-20 18:31:51,032 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,032 yfinance ['DFS']: possibly delisted; no timezone found
+2026-10-20 18:31:51,036 yfinance $DISCA: possibly delisted; no timezone found
+2026-10-20 18:31:51,036 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,036 yfinance ['DISCA']: possibly delisted; no timezone found
+2026-10-20 18:31:51,041 yfinance $DISCK: possibly delisted; no timezone found
+2026-10-20 18:31:51,041 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,041 yfinance ['DISCK']: possibly delisted; no timezone found
+2026-10-20 18:31:51,045 yfinance $DISH: possibly delisted; no timezone found
+2026-10-20 18:31:51,046 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,046 yfinance ['DISH']: possibly delisted; no timezone found
+2026-10-20 18:31:51,050 yfinance $DNB: possibly delisted; no timezone found
+2026-10-20 18:31:51,050 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,050 yfinance ['DNB']: possibly delisted; no timezone found
+2026-10-20 18:31:51,054 yfinance $DNR: possibly delisted; no timezone found
+2026-10-20 18:31:51,054 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,054 yfinance ['DNR']: possibly delisted; no timezone found
+2026-10-20 18:31:51,058 yfinance $DO: possibly delisted; no timezone found
+2026-10-20 18:31:51,058 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,058 yfinance ['DO']: possibly delisted; no timezone found
+2026-10-20 18:31:51,062 yfinance $DRE: possibly delisted; no timezone found
+2026-10-20 18:31:51,062 yfinance 
+1 Failed download:
+2026-10-20 18:31:51,062 yfinance ['DRE']: possibly delisted; no timezone found
+2026-10-20 18:31:52,469 yfinance $EA: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:31:57,361 yfinance $EVHC: possibly delisted; no timezone found
+2026-10-20 18:31:58,884 yfinance $EQR: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:00,549 yfinance $ENDP: possibly delisted; no timezone found
+2026-10-20 18:32:05,803 yfinance $DTV: possibly delisted; no timezone found
+2026-10-20 18:32:07,764 yfinance $DWDP: possibly delisted; no timezone found
+2026-10-20 18:32:08,343 yfinance $EKDKQ: possibly delisted; no timezone found
+2026-10-20 18:32:09,173 yfinance $ETFC: possibly delisted; no timezone found
+2026-10-20 18:32:10,243 yfinance $ESV: possibly delisted; no timezone found
+2026-10-20 18:32:10,710 yfinance $ESRX: possibly delisted; no timezone found
+2026-10-20 18:32:11,107 yfinance 
+10 Failed downloads:
+2026-10-20 18:32:11,107 yfinance ['EA', 'EQR']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:11,107 yfinance ['EVHC', 'ENDP', 'DTV', 'DWDP', 'EKDKQ', 'ETFC', 'ESV', 'ESRX']: possibly delisted; no timezone found
+2026-10-20 18:32:11,605 yfinance $DTV: possibly delisted; no timezone found
+2026-10-20 18:32:11,605 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,605 yfinance ['DTV']: possibly delisted; no timezone found
+2026-10-20 18:32:11,609 yfinance $DWDP: possibly delisted; no timezone found
+2026-10-20 18:32:11,610 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,610 yfinance ['DWDP']: possibly delisted; no timezone found
+2026-10-20 18:32:11,614 yfinance $EA: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:11,615 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,615 yfinance ['EA']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:11,619 yfinance $EKDKQ: possibly delisted; no timezone found
+2026-10-20 18:32:11,619 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,619 yfinance ['EKDKQ']: possibly delisted; no timezone found
+2026-10-20 18:32:11,623 yfinance $ENDP: possibly delisted; no timezone found
+2026-10-20 18:32:11,623 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,623 yfinance ['ENDP']: possibly delisted; no timezone found
+2026-10-20 18:32:11,627 yfinance $EQR: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:11,628 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,628 yfinance ['EQR']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:11,631 yfinance $ESRX: possibly delisted; no timezone found
+2026-10-20 18:32:11,632 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,632 yfinance ['ESRX']: possibly delisted; no timezone found
+2026-10-20 18:32:11,635 yfinance $ESV: possibly delisted; no timezone found
+2026-10-20 18:32:11,636 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,636 yfinance ['ESV']: possibly delisted; no timezone found
+2026-10-20 18:32:11,639 yfinance $ETFC: possibly delisted; no timezone found
+2026-10-20 18:32:11,640 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,640 yfinance ['ETFC']: possibly delisted; no timezone found
+2026-10-20 18:32:11,643 yfinance $EVHC: possibly delisted; no timezone found
+2026-10-20 18:32:11,643 yfinance 
+1 Failed download:
+2026-10-20 18:32:11,643 yfinance ['EVHC']: possibly delisted; no timezone found
+2026-10-20 18:32:14,687 yfinance $FRX: possibly delisted; no timezone found
+2026-10-20 18:32:15,192 yfinance $FII: possibly delisted; no timezone found
+2026-10-20 18:32:16,395 yfinance $FTR: possibly delisted; no timezone found
+2026-10-20 18:32:17,557 yfinance $FBHS: possibly delisted; no timezone found
+2026-10-20 18:32:20,611 yfinance $FRC: possibly delisted; no timezone found
+2026-10-20 18:32:23,517 yfinance $FI: possibly delisted; no timezone found
+2026-10-20 18:32:26,012 yfinance $FDO: possibly delisted; no timezone found
+2026-10-20 18:32:26,687 yfinance $GAS: possibly delisted; no timezone found
+2026-10-20 18:32:27,409 yfinance $GGP: possibly delisted; no timezone found
+2026-10-20 18:32:30,553 yfinance $FLIR: possibly delisted; no timezone found
+2026-10-20 18:32:31,074 yfinance $FLT: possibly delisted; no timezone found
+2026-10-20 18:32:32,900 yfinance $FL: possibly delisted; no timezone found
+2026-10-20 18:32:32,901 yfinance 
+12 Failed downloads:
+2026-10-20 18:32:32,901 yfinance ['FRX', 'FII', 'FTR', 'FBHS', 'FRC', 'FI', 'FDO', 'GAS', 'GGP', 'FLIR', 'FLT', 'FL']: possibly delisted; no timezone found
+2026-10-20 18:32:33,298 yfinance $FBHS: possibly delisted; no timezone found
+2026-10-20 18:32:33,298 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,298 yfinance ['FBHS']: possibly delisted; no timezone found
+2026-10-20 18:32:33,302 yfinance $FDO: possibly delisted; no timezone found
+2026-10-20 18:32:33,303 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,303 yfinance ['FDO']: possibly delisted; no timezone found
+2026-10-20 18:32:33,306 yfinance $FI: possibly delisted; no timezone found
+2026-10-20 18:32:33,306 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,306 yfinance ['FI']: possibly delisted; no timezone found
+2026-10-20 18:32:33,309 yfinance $FII: possibly delisted; no timezone found
+2026-10-20 18:32:33,310 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,310 yfinance ['FII']: possibly delisted; no timezone found
+2026-10-20 18:32:33,313 yfinance $FL: possibly delisted; no timezone found
+2026-10-20 18:32:33,313 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,314 yfinance ['FL']: possibly delisted; no timezone found
+2026-10-20 18:32:33,317 yfinance $FLIR: possibly delisted; no timezone found
+2026-10-20 18:32:33,317 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,317 yfinance ['FLIR']: possibly delisted; no timezone found
+2026-10-20 18:32:33,320 yfinance $FLT: possibly delisted; no timezone found
+2026-10-20 18:32:33,321 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,321 yfinance ['FLT']: possibly delisted; no timezone found
+2026-10-20 18:32:33,324 yfinance $FRC: possibly delisted; no timezone found
+2026-10-20 18:32:33,324 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,324 yfinance ['FRC']: possibly delisted; no timezone found
+2026-10-20 18:32:33,327 yfinance $FRX: possibly delisted; no timezone found
+2026-10-20 18:32:33,327 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,327 yfinance ['FRX']: possibly delisted; no timezone found
+2026-10-20 18:32:33,331 yfinance $FTR: possibly delisted; no timezone found
+2026-10-20 18:32:33,331 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,331 yfinance ['FTR']: possibly delisted; no timezone found
+2026-10-20 18:32:33,334 yfinance $GAS: possibly delisted; no timezone found
+2026-10-20 18:32:33,335 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,335 yfinance ['GAS']: possibly delisted; no timezone found
+2026-10-20 18:32:33,338 yfinance $GGP: possibly delisted; no timezone found
+2026-10-20 18:32:33,338 yfinance 
+1 Failed download:
+2026-10-20 18:32:33,338 yfinance ['GGP']: possibly delisted; no timezone found
+2026-10-20 18:32:35,385 yfinance $HBI: possibly delisted; no timezone found
+2026-10-20 18:32:36,024 yfinance $HCP: possibly delisted; no timezone found
+2026-10-20 18:32:36,893 yfinance $GMCR: possibly delisted; no timezone found
+2026-10-20 18:32:38,639 yfinance $HFC: possibly delisted; no timezone found
+2026-10-20 18:32:40,733 yfinance $HAR: possibly delisted; no timezone found
+2026-10-20 18:32:41,157 yfinance $HSH: possibly delisted; no timezone found
+2026-10-20 18:32:42,302 yfinance $GR: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:42,933 yfinance $GPS: possibly delisted; no timezone found
+2026-10-20 18:32:43,476 yfinance $HCBK: possibly delisted; no timezone found
+2026-10-20 18:32:43,928 yfinance $HNZ: possibly delisted; no timezone found
+2026-10-20 18:32:44,715 yfinance $HRS: possibly delisted; no timezone found
+2026-10-20 18:32:45,109 yfinance $HSP: possibly delisted; no timezone found
+2026-10-20 18:32:46,730 yfinance $HOT: possibly delisted; no timezone found
+2026-10-20 18:32:48,663 yfinance $HES: possibly delisted; no timezone found
+2026-10-20 18:32:49,416 yfinance $HOLX: possibly delisted; no timezone found
+2026-10-20 18:32:51,744 yfinance 
+15 Failed downloads:
+2026-10-20 18:32:51,744 yfinance ['HBI', 'HCP', 'GMCR', 'HFC', 'HAR', 'HSH', 'GPS', 'HCBK', 'HNZ', 'HRS', 'HSP', 'HOT', 'HES', 'HOLX']: possibly delisted; no timezone found
+2026-10-20 18:32:51,744 yfinance ['GR']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:52,153 yfinance $GMCR: possibly delisted; no timezone found
+2026-10-20 18:32:52,154 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,154 yfinance ['GMCR']: possibly delisted; no timezone found
+2026-10-20 18:32:52,158 yfinance $GPS: possibly delisted; no timezone found
+2026-10-20 18:32:52,158 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,158 yfinance ['GPS']: possibly delisted; no timezone found
+2026-10-20 18:32:52,162 yfinance $GR: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:52,162 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,162 yfinance ['GR']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:32:52,165 yfinance $HAR: possibly delisted; no timezone found
+2026-10-20 18:32:52,165 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,165 yfinance ['HAR']: possibly delisted; no timezone found
+2026-10-20 18:32:52,168 yfinance $HBI: possibly delisted; no timezone found
+2026-10-20 18:32:52,169 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,169 yfinance ['HBI']: possibly delisted; no timezone found
+2026-10-20 18:32:52,172 yfinance $HCBK: possibly delisted; no timezone found
+2026-10-20 18:32:52,172 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,172 yfinance ['HCBK']: possibly delisted; no timezone found
+2026-10-20 18:32:52,175 yfinance $HCP: possibly delisted; no timezone found
+2026-10-20 18:32:52,176 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,176 yfinance ['HCP']: possibly delisted; no timezone found
+2026-10-20 18:32:52,179 yfinance $HES: possibly delisted; no timezone found
+2026-10-20 18:32:52,179 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,179 yfinance ['HES']: possibly delisted; no timezone found
+2026-10-20 18:32:52,182 yfinance $HFC: possibly delisted; no timezone found
+2026-10-20 18:32:52,183 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,183 yfinance ['HFC']: possibly delisted; no timezone found
+2026-10-20 18:32:52,186 yfinance $HNZ: possibly delisted; no timezone found
+2026-10-20 18:32:52,186 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,186 yfinance ['HNZ']: possibly delisted; no timezone found
+2026-10-20 18:32:52,189 yfinance $HOLX: possibly delisted; no timezone found
+2026-10-20 18:32:52,190 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,190 yfinance ['HOLX']: possibly delisted; no timezone found
+2026-10-20 18:32:52,193 yfinance $HOT: possibly delisted; no timezone found
+2026-10-20 18:32:52,193 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,193 yfinance ['HOT']: possibly delisted; no timezone found
+2026-10-20 18:32:52,197 yfinance $HRS: possibly delisted; no timezone found
+2026-10-20 18:32:52,197 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,197 yfinance ['HRS']: possibly delisted; no timezone found
+2026-10-20 18:32:52,201 yfinance $HSH: possibly delisted; no timezone found
+2026-10-20 18:32:52,201 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,201 yfinance ['HSH']: possibly delisted; no timezone found
+2026-10-20 18:32:52,204 yfinance $HSP: possibly delisted; no timezone found
+2026-10-20 18:32:52,205 yfinance 
+1 Failed download:
+2026-10-20 18:32:52,205 yfinance ['HSP']: possibly delisted; no timezone found
+2026-10-20 18:32:53,665 yfinance $JNS: possibly delisted; no timezone found
+2026-10-20 18:32:55,392 yfinance $JCP: possibly delisted; no timezone found
+2026-10-20 18:32:55,827 yfinance $JEC: possibly delisted; no timezone found
+2026-10-20 18:32:59,153 yfinance $JNPR: possibly delisted; no timezone found
+2026-10-20 18:33:01,368 yfinance $JOY: possibly delisted; no timezone found
+2026-10-20 18:33:04,740 yfinance $IPG: possibly delisted; no timezone found
+2026-10-20 18:33:05,146 yfinance $IGT: possibly delisted; no timezone found
+2026-10-20 18:33:06,271 yfinance $JWN: possibly delisted; no timezone found
+2026-10-20 18:33:07,497 yfinance $JNY: possibly delisted; no timezone found
+2026-10-20 18:33:09,398 yfinance $K: possibly delisted; no timezone found
+2026-10-20 18:33:10,393 yfinance 
+10 Failed downloads:
+2026-10-20 18:33:10,394 yfinance ['JNS', 'JCP', 'JEC', 'JNPR', 'JOY', 'IPG', 'IGT', 'JWN', 'JNY', 'K']: possibly delisted; no timezone found
+2026-10-20 18:33:10,740 yfinance $IGT: possibly delisted; no timezone found
+2026-10-20 18:33:10,740 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,740 yfinance ['IGT']: possibly delisted; no timezone found
+2026-10-20 18:33:10,744 yfinance $IPG: possibly delisted; no timezone found
+2026-10-20 18:33:10,744 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,744 yfinance ['IPG']: possibly delisted; no timezone found
+2026-10-20 18:33:10,747 yfinance $JCP: possibly delisted; no timezone found
+2026-10-20 18:33:10,748 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,748 yfinance ['JCP']: possibly delisted; no timezone found
+2026-10-20 18:33:10,751 yfinance $JEC: possibly delisted; no timezone found
+2026-10-20 18:33:10,751 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,751 yfinance ['JEC']: possibly delisted; no timezone found
+2026-10-20 18:33:10,754 yfinance $JNPR: possibly delisted; no timezone found
+2026-10-20 18:33:10,755 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,755 yfinance ['JNPR']: possibly delisted; no timezone found
+2026-10-20 18:33:10,758 yfinance $JNS: possibly delisted; no timezone found
+2026-10-20 18:33:10,758 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,758 yfinance ['JNS']: possibly delisted; no timezone found
+2026-10-20 18:33:10,761 yfinance $JNY: possibly delisted; no timezone found
+2026-10-20 18:33:10,761 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,761 yfinance ['JNY']: possibly delisted; no timezone found
+2026-10-20 18:33:10,764 yfinance $JOY: possibly delisted; no timezone found
+2026-10-20 18:33:10,765 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,765 yfinance ['JOY']: possibly delisted; no timezone found
+2026-10-20 18:33:10,768 yfinance $JWN: possibly delisted; no timezone found
+2026-10-20 18:33:10,768 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,768 yfinance ['JWN']: possibly delisted; no timezone found
+2026-10-20 18:33:10,771 yfinance $K: possibly delisted; no timezone found
+2026-10-20 18:33:10,772 yfinance 
+1 Failed download:
+2026-10-20 18:33:10,772 yfinance ['K']: possibly delisted; no timezone found
+2026-10-20 18:33:13,432 yfinance $KSU: possibly delisted; no timezone found
+2026-10-20 18:33:15,102 yfinance $LLL: possibly delisted; no timezone found
+2026-10-20 18:33:17,424 yfinance $KORS: possibly delisted; no timezone found
+2026-10-20 18:33:18,227 yfinance $LLTC: possibly delisted; no timezone found
+2026-10-20 18:33:19,276 yfinance $LEG: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:33:20,229 yfinance $LXK: possibly delisted; no timezone found
+2026-10-20 18:33:22,164 yfinance $LVLT: possibly delisted; no timezone found
+2026-10-20 18:33:23,785 yfinance $KRFT: possibly delisted; no timezone found
+2026-10-20 18:33:26,416 yfinance $LM: possibly delisted; no timezone found
+2026-10-20 18:33:28,651 yfinance $LO: possibly delisted; no timezone found
+2026-10-20 18:33:29,087 yfinance $LSI: possibly delisted; no timezone found
+2026-10-20 18:33:29,088 yfinance 
+11 Failed downloads:
+2026-10-20 18:33:29,088 yfinance ['KSU', 'LLL', 'KORS', 'LLTC', 'LXK', 'LVLT', 'KRFT', 'LM', 'LO', 'LSI']: possibly delisted; no timezone found
+2026-10-20 18:33:29,088 yfinance ['LEG']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:33:29,480 yfinance $KORS: possibly delisted; no timezone found
+2026-10-20 18:33:29,481 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,481 yfinance ['KORS']: possibly delisted; no timezone found
+2026-10-20 18:33:29,486 yfinance $KRFT: possibly delisted; no timezone found
+2026-10-20 18:33:29,486 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,486 yfinance ['KRFT']: possibly delisted; no timezone found
+2026-10-20 18:33:29,490 yfinance $KSU: possibly delisted; no timezone found
+2026-10-20 18:33:29,491 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,491 yfinance ['KSU']: possibly delisted; no timezone found
+2026-10-20 18:33:29,495 yfinance $LEG: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:33:29,496 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,496 yfinance ['LEG']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:33:29,500 yfinance $LLL: possibly delisted; no timezone found
+2026-10-20 18:33:29,500 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,500 yfinance ['LLL']: possibly delisted; no timezone found
+2026-10-20 18:33:29,504 yfinance $LLTC: possibly delisted; no timezone found
+2026-10-20 18:33:29,505 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,505 yfinance ['LLTC']: possibly delisted; no timezone found
+2026-10-20 18:33:29,509 yfinance $LM: possibly delisted; no timezone found
+2026-10-20 18:33:29,509 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,509 yfinance ['LM']: possibly delisted; no timezone found
+2026-10-20 18:33:29,513 yfinance $LO: possibly delisted; no timezone found
+2026-10-20 18:33:29,514 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,514 yfinance ['LO']: possibly delisted; no timezone found
+2026-10-20 18:33:29,518 yfinance $LSI: possibly delisted; no timezone found
+2026-10-20 18:33:29,518 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,519 yfinance ['LSI']: possibly delisted; no timezone found
+2026-10-20 18:33:29,522 yfinance $LVLT: possibly delisted; no timezone found
+2026-10-20 18:33:29,523 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,523 yfinance ['LVLT']: possibly delisted; no timezone found
+2026-10-20 18:33:29,527 yfinance $LXK: possibly delisted; no timezone found
+2026-10-20 18:33:29,528 yfinance 
+1 Failed download:
+2026-10-20 18:33:29,528 yfinance ['LXK']: possibly delisted; no timezone found
+2026-10-20 18:33:32,238 yfinance $MMC: possibly delisted; no timezone found
+2026-10-20 18:33:33,057 yfinance $MTLQQ: possibly delisted; no timezone found
+2026-10-20 18:33:33,756 yfinance $MEE: possibly delisted; no timezone found
+2026-10-20 18:33:34,656 yfinance $MRO: possibly delisted; no timezone found
+2026-10-20 18:33:38,632 yfinance $MHS: possibly delisted; no timezone found
+2026-10-20 18:33:39,812 yfinance $MNK: possibly delisted; no timezone found
+2026-10-20 18:33:40,851 yfinance $MFE: possibly delisted; no timezone found
+2026-10-20 18:33:41,639 yfinance $MOLX: possibly delisted; no timezone found
+2026-10-20 18:33:43,459 yfinance $MON: possibly delisted; no timezone found
+2026-10-20 18:33:44,414 yfinance $MJN: possibly delisted; no timezone found
+2026-10-20 18:33:45,820 yfinance $MDP: possibly delisted; no timezone found
+2026-10-20 18:33:48,329 yfinance $MIL: possibly delisted; no timezone found
+2026-10-20 18:33:48,334 yfinance 
+12 Failed downloads:
+2026-10-20 18:33:48,334 yfinance ['MMC', 'MTLQQ', 'MEE', 'MRO', 'MHS', 'MNK', 'MFE', 'MOLX', 'MON', 'MJN', 'MDP', 'MIL']: possibly delisted; no timezone found
+2026-10-20 18:33:48,852 yfinance $MDP: possibly delisted; no timezone found
+2026-10-20 18:33:48,853 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,853 yfinance ['MDP']: possibly delisted; no timezone found
+2026-10-20 18:33:48,856 yfinance $MEE: possibly delisted; no timezone found
+2026-10-20 18:33:48,857 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,857 yfinance ['MEE']: possibly delisted; no timezone found
+2026-10-20 18:33:48,860 yfinance $MFE: possibly delisted; no timezone found
+2026-10-20 18:33:48,860 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,860 yfinance ['MFE']: possibly delisted; no timezone found
+2026-10-20 18:33:48,863 yfinance $MHS: possibly delisted; no timezone found
+2026-10-20 18:33:48,864 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,864 yfinance ['MHS']: possibly delisted; no timezone found
+2026-10-20 18:33:48,867 yfinance $MIL: possibly delisted; no timezone found
+2026-10-20 18:33:48,867 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,867 yfinance ['MIL']: possibly delisted; no timezone found
+2026-10-20 18:33:48,870 yfinance $MJN: possibly delisted; no timezone found
+2026-10-20 18:33:48,871 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,871 yfinance ['MJN']: possibly delisted; no timezone found
+2026-10-20 18:33:48,874 yfinance $MMC: possibly delisted; no timezone found
+2026-10-20 18:33:48,874 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,874 yfinance ['MMC']: possibly delisted; no timezone found
+2026-10-20 18:33:48,877 yfinance $MNK: possibly delisted; no timezone found
+2026-10-20 18:33:48,878 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,878 yfinance ['MNK']: possibly delisted; no timezone found
+2026-10-20 18:33:48,881 yfinance $MOLX: possibly delisted; no timezone found
+2026-10-20 18:33:48,881 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,881 yfinance ['MOLX']: possibly delisted; no timezone found
+2026-10-20 18:33:48,884 yfinance $MON: possibly delisted; no timezone found
+2026-10-20 18:33:48,885 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,885 yfinance ['MON']: possibly delisted; no timezone found
+2026-10-20 18:33:48,889 yfinance $MRO: possibly delisted; no timezone found
+2026-10-20 18:33:48,889 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,889 yfinance ['MRO']: possibly delisted; no timezone found
+2026-10-20 18:33:48,892 yfinance $MTLQQ: possibly delisted; no timezone found
+2026-10-20 18:33:48,893 yfinance 
+1 Failed download:
+2026-10-20 18:33:48,893 yfinance ['MTLQQ']: possibly delisted; no timezone found
+2026-10-20 18:33:50,402 yfinance $NOVL: possibly delisted; no timezone found
+2026-10-20 18:33:51,085 yfinance $MWV: possibly delisted; no timezone found
+2026-10-20 18:33:53,950 yfinance $NYX: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:33:54,605 yfinance $ODP: possibly delisted; no timezone found
+2026-10-20 18:33:55,023 yfinance $MXIM: possibly delisted; no timezone found
+2026-10-20 18:33:55,968 yfinance $NSM: possibly delisted; no timezone found
+2026-10-20 18:33:56,679 yfinance $NBL: possibly delisted; no timezone found
+2026-10-20 18:33:59,692 yfinance $NVLS: possibly delisted; no timezone found
+2026-10-20 18:34:01,649 yfinance $NLOK: possibly delisted; no timezone found
+2026-10-20 18:34:02,115 yfinance $MYL: possibly delisted; no timezone found
+2026-10-20 18:34:04,124 yfinance $NLSN: possibly delisted; no timezone found
+2026-10-20 18:34:04,648 yfinance $MWW: possibly delisted; no timezone found
+2026-10-20 18:34:07,172 yfinance 
+12 Failed downloads:
+2026-10-20 18:34:07,173 yfinance ['NOVL', 'MWV', 'ODP', 'MXIM', 'NSM', 'NBL', 'NVLS', 'NLOK', 'MYL', 'NLSN', 'MWW']: possibly delisted; no timezone found
+2026-10-20 18:34:07,173 yfinance ['NYX']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:07,551 yfinance $MWV: possibly delisted; no timezone found
+2026-10-20 18:34:07,551 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,551 yfinance ['MWV']: possibly delisted; no timezone found
+2026-10-20 18:34:07,555 yfinance $MWW: possibly delisted; no timezone found
+2026-10-20 18:34:07,555 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,555 yfinance ['MWW']: possibly delisted; no timezone found
+2026-10-20 18:34:07,558 yfinance $MXIM: possibly delisted; no timezone found
+2026-10-20 18:34:07,559 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,559 yfinance ['MXIM']: possibly delisted; no timezone found
+2026-10-20 18:34:07,562 yfinance $MYL: possibly delisted; no timezone found
+2026-10-20 18:34:07,562 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,562 yfinance ['MYL']: possibly delisted; no timezone found
+2026-10-20 18:34:07,565 yfinance $NBL: possibly delisted; no timezone found
+2026-10-20 18:34:07,566 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,566 yfinance ['NBL']: possibly delisted; no timezone found
+2026-10-20 18:34:07,569 yfinance $NLOK: possibly delisted; no timezone found
+2026-10-20 18:34:07,570 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,570 yfinance ['NLOK']: possibly delisted; no timezone found
+2026-10-20 18:34:07,573 yfinance $NLSN: possibly delisted; no timezone found
+2026-10-20 18:34:07,573 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,573 yfinance ['NLSN']: possibly delisted; no timezone found
+2026-10-20 18:34:07,576 yfinance $NOVL: possibly delisted; no timezone found
+2026-10-20 18:34:07,577 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,577 yfinance ['NOVL']: possibly delisted; no timezone found
+2026-10-20 18:34:07,580 yfinance $NSM: possibly delisted; no timezone found
+2026-10-20 18:34:07,580 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,580 yfinance ['NSM']: possibly delisted; no timezone found
+2026-10-20 18:34:07,587 yfinance $NVLS: possibly delisted; no timezone found
+2026-10-20 18:34:07,587 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,587 yfinance ['NVLS']: possibly delisted; no timezone found
+2026-10-20 18:34:07,592 yfinance $NYX: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:07,592 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,592 yfinance ['NYX']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:07,596 yfinance $ODP: possibly delisted; no timezone found
+2026-10-20 18:34:07,597 yfinance 
+1 Failed download:
+2026-10-20 18:34:07,597 yfinance ['ODP']: possibly delisted; no timezone found
+2026-10-20 18:34:09,827 yfinance $PCP: possibly delisted; no timezone found
+2026-10-20 18:34:12,046 yfinance $PKI: possibly delisted; no timezone found
+2026-10-20 18:34:14,628 yfinance $PETM: possibly delisted; no timezone found
+2026-10-20 18:34:15,450 yfinance $PTV: possibly delisted; no timezone found
+2026-10-20 18:34:16,431 yfinance $PGN: possibly delisted; no timezone found
+2026-10-20 18:34:18,615 yfinance $PBCT: possibly delisted; no timezone found
+2026-10-20 18:34:20,064 yfinance $PBG: possibly delisted; no timezone found
+2026-10-20 18:34:20,661 yfinance $PLL: possibly delisted; no timezone found
+2026-10-20 18:34:23,285 yfinance $PEAK: possibly delisted; no timezone found
+2026-10-20 18:34:25,973 yfinance $PDCO: possibly delisted; no timezone found
+2026-10-20 18:34:25,974 yfinance 
+10 Failed downloads:
+2026-10-20 18:34:25,974 yfinance ['PCP', 'PKI', 'PETM', 'PTV', 'PGN', 'PBCT', 'PBG', 'PLL', 'PEAK', 'PDCO']: possibly delisted; no timezone found
+2026-10-20 18:34:26,388 yfinance $PBCT: possibly delisted; no timezone found
+2026-10-20 18:34:26,388 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,388 yfinance ['PBCT']: possibly delisted; no timezone found
+2026-10-20 18:34:26,394 yfinance $PBG: possibly delisted; no timezone found
+2026-10-20 18:34:26,394 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,394 yfinance ['PBG']: possibly delisted; no timezone found
+2026-10-20 18:34:26,397 yfinance $PCP: possibly delisted; no timezone found
+2026-10-20 18:34:26,398 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,398 yfinance ['PCP']: possibly delisted; no timezone found
+2026-10-20 18:34:26,402 yfinance $PDCO: possibly delisted; no timezone found
+2026-10-20 18:34:26,402 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,402 yfinance ['PDCO']: possibly delisted; no timezone found
+2026-10-20 18:34:26,406 yfinance $PEAK: possibly delisted; no timezone found
+2026-10-20 18:34:26,407 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,407 yfinance ['PEAK']: possibly delisted; no timezone found
+2026-10-20 18:34:26,410 yfinance $PETM: possibly delisted; no timezone found
+2026-10-20 18:34:26,411 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,411 yfinance ['PETM']: possibly delisted; no timezone found
+2026-10-20 18:34:26,414 yfinance $PGN: possibly delisted; no timezone found
+2026-10-20 18:34:26,414 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,414 yfinance ['PGN']: possibly delisted; no timezone found
+2026-10-20 18:34:26,417 yfinance $PKI: possibly delisted; no timezone found
+2026-10-20 18:34:26,418 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,418 yfinance ['PKI']: possibly delisted; no timezone found
+2026-10-20 18:34:26,425 yfinance $PLL: possibly delisted; no timezone found
+2026-10-20 18:34:26,426 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,426 yfinance ['PLL']: possibly delisted; no timezone found
+2026-10-20 18:34:26,429 yfinance $PTV: possibly delisted; no timezone found
+2026-10-20 18:34:26,429 yfinance 
+1 Failed download:
+2026-10-20 18:34:26,429 yfinance ['PTV']: possibly delisted; no timezone found
+2026-10-20 18:34:28,429 yfinance $RDC: possibly delisted; no timezone found
+2026-10-20 18:34:29,131 yfinance $RE: possibly delisted; no timezone found
+2026-10-20 18:34:29,896 yfinance $ROH: possibly delisted; no timezone found
+2026-10-20 18:34:31,171 yfinance $SCG: possibly delisted; no timezone found
+2026-10-20 18:34:31,609 yfinance $PXD: possibly delisted; no timezone found
+2026-10-20 18:34:33,182 yfinance $PX: possibly delisted; no timezone found
+2026-10-20 18:34:33,626 yfinance $QEP: possibly delisted; no timezone found
+2026-10-20 18:34:35,746 yfinance $RHT: possibly delisted; no timezone found
+2026-10-20 18:34:38,628 yfinance $RTN: possibly delisted; no timezone found
+2026-10-20 18:34:39,999 yfinance $SEE: possibly delisted; no timezone found
+2026-10-20 18:34:41,585 yfinance $RAI: possibly delisted; no timezone found
+2026-10-20 18:34:42,011 yfinance $RRD: possibly delisted; no timezone found
+2026-10-20 18:34:42,698 yfinance $RX: possibly delisted; no timezone found
+2026-10-20 18:34:43,367 yfinance $QRVO: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:43,659 yfinance $SATS: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:44,114 yfinance $QLGC: possibly delisted; no timezone found
+2026-10-20 18:34:44,885 yfinance $RSHCQ: possibly delisted; no timezone found
+2026-10-20 18:34:45,197 yfinance 
+17 Failed downloads:
+2026-10-20 18:34:45,197 yfinance ['RDC', 'RE', 'ROH', 'SCG', 'PXD', 'PX', 'QEP', 'RHT', 'RTN', 'SEE', 'RAI', 'RRD', 'RX', 'QLGC', 'RSHCQ']: possibly delisted; no timezone found
+2026-10-20 18:34:45,198 yfinance ['QRVO', 'SATS']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:45,522 yfinance $PX: possibly delisted; no timezone found
+2026-10-20 18:34:45,523 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,523 yfinance ['PX']: possibly delisted; no timezone found
+2026-10-20 18:34:45,527 yfinance $PXD: possibly delisted; no timezone found
+2026-10-20 18:34:45,527 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,527 yfinance ['PXD']: possibly delisted; no timezone found
+2026-10-20 18:34:45,531 yfinance $QEP: possibly delisted; no timezone found
+2026-10-20 18:34:45,531 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,531 yfinance ['QEP']: possibly delisted; no timezone found
+2026-10-20 18:34:45,534 yfinance $QLGC: possibly delisted; no timezone found
+2026-10-20 18:34:45,535 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,535 yfinance ['QLGC']: possibly delisted; no timezone found
+2026-10-20 18:34:45,538 yfinance $QRVO: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:45,539 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,539 yfinance ['QRVO']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:45,542 yfinance $RAI: possibly delisted; no timezone found
+2026-10-20 18:34:45,543 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,543 yfinance ['RAI']: possibly delisted; no timezone found
+2026-10-20 18:34:45,546 yfinance $RDC: possibly delisted; no timezone found
+2026-10-20 18:34:45,547 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,547 yfinance ['RDC']: possibly delisted; no timezone found
+2026-10-20 18:34:45,550 yfinance $RE: possibly delisted; no timezone found
+2026-10-20 18:34:45,551 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,551 yfinance ['RE']: possibly delisted; no timezone found
+2026-10-20 18:34:45,554 yfinance $RHT: possibly delisted; no timezone found
+2026-10-20 18:34:45,555 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,555 yfinance ['RHT']: possibly delisted; no timezone found
+2026-10-20 18:34:45,558 yfinance $ROH: possibly delisted; no timezone found
+2026-10-20 18:34:45,558 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,559 yfinance ['ROH']: possibly delisted; no timezone found
+2026-10-20 18:34:45,562 yfinance $RRD: possibly delisted; no timezone found
+2026-10-20 18:34:45,563 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,563 yfinance ['RRD']: possibly delisted; no timezone found
+2026-10-20 18:34:45,566 yfinance $RSHCQ: possibly delisted; no timezone found
+2026-10-20 18:34:45,567 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,567 yfinance ['RSHCQ']: possibly delisted; no timezone found
+2026-10-20 18:34:45,571 yfinance $RTN: possibly delisted; no timezone found
+2026-10-20 18:34:45,573 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,573 yfinance ['RTN']: possibly delisted; no timezone found
+2026-10-20 18:34:45,577 yfinance $RX: possibly delisted; no timezone found
+2026-10-20 18:34:45,577 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,577 yfinance ['RX']: possibly delisted; no timezone found
+2026-10-20 18:34:45,581 yfinance $SATS: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:45,582 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,582 yfinance ['SATS']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:34:45,585 yfinance $SCG: possibly delisted; no timezone found
+2026-10-20 18:34:45,585 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,585 yfinance ['SCG']: possibly delisted; no timezone found
+2026-10-20 18:34:45,589 yfinance $SEE: possibly delisted; no timezone found
+2026-10-20 18:34:45,589 yfinance 
+1 Failed download:
+2026-10-20 18:34:45,589 yfinance ['SEE']: possibly delisted; no timezone found
+2026-10-20 18:34:47,801 yfinance $SOV: possibly delisted; no timezone found
+2026-10-20 18:34:48,259 yfinance $SYMC: possibly delisted; no timezone found
+2026-10-20 18:34:54,614 yfinance $SRCL: possibly delisted; no timezone found
+2026-10-20 18:34:56,605 yfinance $STR: possibly delisted; no timezone found
+2026-10-20 18:34:58,293 yfinance $SVU: possibly delisted; no timezone found
+2026-10-20 18:34:58,780 yfinance $SWY: possibly delisted; no timezone found
+2026-10-20 18:34:59,260 yfinance $SIVB: possibly delisted; no timezone found
+2026-10-20 18:34:59,725 yfinance $SNI: possibly delisted; no timezone found
+2026-10-20 18:35:02,036 yfinance $SUNEQ: possibly delisted; no timezone found
+2026-10-20 18:35:02,534 yfinance $SIAL: possibly delisted; no timezone found
+2026-10-20 18:35:02,985 yfinance $SWN: possibly delisted; no timezone found
+2026-10-20 18:35:03,474 yfinance $STJ: possibly delisted; no timezone found
+2026-10-20 18:35:04,682 yfinance 
+12 Failed downloads:
+2026-10-20 18:35:04,683 yfinance ['SOV', 'SYMC', 'SRCL', 'STR', 'SVU', 'SWY', 'SIVB', 'SNI', 'SUNEQ', 'SIAL', 'SWN', 'STJ']: possibly delisted; no timezone found
+2026-10-20 18:35:05,259 yfinance $SIAL: possibly delisted; no timezone found
+2026-10-20 18:35:05,260 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,260 yfinance ['SIAL']: possibly delisted; no timezone found
+2026-10-20 18:35:05,265 yfinance $SIVB: possibly delisted; no timezone found
+2026-10-20 18:35:05,266 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,266 yfinance ['SIVB']: possibly delisted; no timezone found
+2026-10-20 18:35:05,271 yfinance $SNI: possibly delisted; no timezone found
+2026-10-20 18:35:05,272 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,272 yfinance ['SNI']: possibly delisted; no timezone found
+2026-10-20 18:35:05,276 yfinance $SOV: possibly delisted; no timezone found
+2026-10-20 18:35:05,277 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,277 yfinance ['SOV']: possibly delisted; no timezone found
+2026-10-20 18:35:05,282 yfinance $SRCL: possibly delisted; no timezone found
+2026-10-20 18:35:05,282 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,282 yfinance ['SRCL']: possibly delisted; no timezone found
+2026-10-20 18:35:05,287 yfinance $STJ: possibly delisted; no timezone found
+2026-10-20 18:35:05,288 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,288 yfinance ['STJ']: possibly delisted; no timezone found
+2026-10-20 18:35:05,293 yfinance $STR: possibly delisted; no timezone found
+2026-10-20 18:35:05,294 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,294 yfinance ['STR']: possibly delisted; no timezone found
+2026-10-20 18:35:05,299 yfinance $SUNEQ: possibly delisted; no timezone found
+2026-10-20 18:35:05,299 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,299 yfinance ['SUNEQ']: possibly delisted; no timezone found
+2026-10-20 18:35:05,304 yfinance $SVU: possibly delisted; no timezone found
+2026-10-20 18:35:05,304 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,304 yfinance ['SVU']: possibly delisted; no timezone found
+2026-10-20 18:35:05,309 yfinance $SWN: possibly delisted; no timezone found
+2026-10-20 18:35:05,309 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,309 yfinance ['SWN']: possibly delisted; no timezone found
+2026-10-20 18:35:05,314 yfinance $SWY: possibly delisted; no timezone found
+2026-10-20 18:35:05,314 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,314 yfinance ['SWY']: possibly delisted; no timezone found
+2026-10-20 18:35:05,319 yfinance $SYMC: possibly delisted; no timezone found
+2026-10-20 18:35:05,320 yfinance 
+1 Failed download:
+2026-10-20 18:35:05,320 yfinance ['SYMC']: possibly delisted; no timezone found
+2026-10-20 18:35:07,048 yfinance $TEG: possibly delisted; no timezone found
+2026-10-20 18:35:07,932 yfinance $TMK: possibly delisted; no timezone found
+2026-10-20 18:35:13,616 yfinance $TGNA: possibly delisted; no timezone found
+2026-10-20 18:35:17,149 yfinance $TWC: possibly delisted; no timezone found
+2026-10-20 18:35:17,866 yfinance $TSS: possibly delisted; no timezone found
+2026-10-20 18:35:18,370 yfinance $TLAB: possibly delisted; no timezone found
+2026-10-20 18:35:23,054 yfinance $TIF: possibly delisted; no timezone found
+2026-10-20 18:35:23,594 yfinance $TWTR: possibly delisted; no timezone found
+2026-10-20 18:35:24,059 yfinance $TWX: possibly delisted; no timezone found
+2026-10-20 18:35:25,156 yfinance $TIE: possibly delisted; no timezone found
+2026-10-20 18:35:25,458 yfinance 
+10 Failed downloads:
+2026-10-20 18:35:25,458 yfinance ['TEG', 'TMK', 'TGNA', 'TWC', 'TSS', 'TLAB', 'TIF', 'TWTR', 'TWX', 'TIE']: possibly delisted; no timezone found
+2026-10-20 18:35:25,899 yfinance $TEG: possibly delisted; no timezone found
+2026-10-20 18:35:25,900 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,900 yfinance ['TEG']: possibly delisted; no timezone found
+2026-10-20 18:35:25,906 yfinance $TGNA: possibly delisted; no timezone found
+2026-10-20 18:35:25,906 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,906 yfinance ['TGNA']: possibly delisted; no timezone found
+2026-10-20 18:35:25,911 yfinance $TIE: possibly delisted; no timezone found
+2026-10-20 18:35:25,912 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,912 yfinance ['TIE']: possibly delisted; no timezone found
+2026-10-20 18:35:25,917 yfinance $TIF: possibly delisted; no timezone found
+2026-10-20 18:35:25,918 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,918 yfinance ['TIF']: possibly delisted; no timezone found
+2026-10-20 18:35:25,923 yfinance $TLAB: possibly delisted; no timezone found
+2026-10-20 18:35:25,924 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,924 yfinance ['TLAB']: possibly delisted; no timezone found
+2026-10-20 18:35:25,929 yfinance $TMK: possibly delisted; no timezone found
+2026-10-20 18:35:25,929 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,929 yfinance ['TMK']: possibly delisted; no timezone found
+2026-10-20 18:35:25,934 yfinance $TSS: possibly delisted; no timezone found
+2026-10-20 18:35:25,935 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,935 yfinance ['TSS']: possibly delisted; no timezone found
+2026-10-20 18:35:25,940 yfinance $TWC: possibly delisted; no timezone found
+2026-10-20 18:35:25,941 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,941 yfinance ['TWC']: possibly delisted; no timezone found
+2026-10-20 18:35:25,946 yfinance $TWTR: possibly delisted; no timezone found
+2026-10-20 18:35:25,947 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,947 yfinance ['TWTR']: possibly delisted; no timezone found
+2026-10-20 18:35:25,953 yfinance $TWX: possibly delisted; no timezone found
+2026-10-20 18:35:25,953 yfinance 
+1 Failed download:
+2026-10-20 18:35:25,954 yfinance ['TWX']: possibly delisted; no timezone found
+2026-10-20 18:35:28,353 yfinance $WIN: possibly delisted; no timezone found
+2026-10-20 18:35:31,088 yfinance $WLTW: possibly delisted; no timezone found
+2026-10-20 18:35:32,004 yfinance $WBA: possibly delisted; no timezone found
+2026-10-20 18:35:32,678 yfinance $WFM: possibly delisted; no timezone found
+2026-10-20 18:35:35,224 yfinance $VIAB: possibly delisted; no timezone found
+2026-10-20 18:35:35,766 yfinance $WFT: possibly delisted; no timezone found
+2026-10-20 18:35:37,569 yfinance $UTX: possibly delisted; no timezone found
+2026-10-20 18:35:38,433 yfinance $WPX: possibly delisted; no timezone found
+2026-10-20 18:35:39,251 yfinance $VIAC: possibly delisted; no timezone found
+2026-10-20 18:35:40,240 yfinance $WBD: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:35:40,691 yfinance $VAR: possibly delisted; no timezone found
+2026-10-20 18:35:42,586 yfinance $WCG: possibly delisted; no timezone found
+2026-10-20 18:35:45,414 yfinance $WRK: possibly delisted; no timezone found
+2026-10-20 18:35:46,216 yfinance 
+13 Failed downloads:
+2026-10-20 18:35:46,217 yfinance ['WIN', 'WLTW', 'WBA', 'WFM', 'VIAB', 'WFT', 'UTX', 'WPX', 'VIAC', 'VAR', 'WCG', 'WRK']: possibly delisted; no timezone found
+2026-10-20 18:35:46,217 yfinance ['WBD']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:35:46,590 yfinance $UTX: possibly delisted; no timezone found
+2026-10-20 18:35:46,590 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,590 yfinance ['UTX']: possibly delisted; no timezone found
+2026-10-20 18:35:46,594 yfinance $VAR: possibly delisted; no timezone found
+2026-10-20 18:35:46,594 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,594 yfinance ['VAR']: possibly delisted; no timezone found
+2026-10-20 18:35:46,598 yfinance $VIAB: possibly delisted; no timezone found
+2026-10-20 18:35:46,598 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,599 yfinance ['VIAB']: possibly delisted; no timezone found
+2026-10-20 18:35:46,603 yfinance $VIAC: possibly delisted; no timezone found
+2026-10-20 18:35:46,603 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,603 yfinance ['VIAC']: possibly delisted; no timezone found
+2026-10-20 18:35:46,607 yfinance $WBA: possibly delisted; no timezone found
+2026-10-20 18:35:46,608 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,608 yfinance ['WBA']: possibly delisted; no timezone found
+2026-10-20 18:35:46,612 yfinance $WBD: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:35:46,613 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,613 yfinance ['WBD']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:35:46,617 yfinance $WCG: possibly delisted; no timezone found
+2026-10-20 18:35:46,617 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,617 yfinance ['WCG']: possibly delisted; no timezone found
+2026-10-20 18:35:46,623 yfinance $WFM: possibly delisted; no timezone found
+2026-10-20 18:35:46,624 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,624 yfinance ['WFM']: possibly delisted; no timezone found
+2026-10-20 18:35:46,627 yfinance $WFT: possibly delisted; no timezone found
+2026-10-20 18:35:46,628 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,628 yfinance ['WFT']: possibly delisted; no timezone found
+2026-10-20 18:35:46,632 yfinance $WIN: possibly delisted; no timezone found
+2026-10-20 18:35:46,634 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,634 yfinance ['WIN']: possibly delisted; no timezone found
+2026-10-20 18:35:46,639 yfinance $WLTW: possibly delisted; no timezone found
+2026-10-20 18:35:46,640 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,640 yfinance ['WLTW']: possibly delisted; no timezone found
+2026-10-20 18:35:46,643 yfinance $WPX: possibly delisted; no timezone found
+2026-10-20 18:35:46,644 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,644 yfinance ['WPX']: possibly delisted; no timezone found
+2026-10-20 18:35:46,647 yfinance $WRK: possibly delisted; no timezone found
+2026-10-20 18:35:46,647 yfinance 
+1 Failed download:
+2026-10-20 18:35:46,647 yfinance ['WRK']: possibly delisted; no timezone found
+2026-10-20 18:35:51,184 yfinance $X: possibly delisted; no timezone found
+2026-10-20 18:35:52,933 yfinance $XTO: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:35:53,566 yfinance $XEC: possibly delisted; no timezone found
+2026-10-20 18:35:54,089 yfinance $WYND: possibly delisted; no timezone found
+2026-10-20 18:35:54,902 yfinance $WYE: possibly delisted; no timezone found
+2026-10-20 18:35:57,125 yfinance $XL: possibly delisted; no timezone found
+2026-10-20 18:35:57,595 yfinance $XLNX: possibly delisted; no timezone found
+2026-10-20 18:35:57,596 yfinance 
+7 Failed downloads:
+2026-10-20 18:35:57,596 yfinance ['X', 'XEC', 'WYND', 'WYE', 'XL', 'XLNX']: possibly delisted; no timezone found
+2026-10-20 18:35:57,596 yfinance ['XTO']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:35:57,854 yfinance $WYE: possibly delisted; no timezone found
+2026-10-20 18:35:57,855 yfinance 
+1 Failed download:
+2026-10-20 18:35:57,855 yfinance ['WYE']: possibly delisted; no timezone found
+2026-10-20 18:35:57,860 yfinance $WYND: possibly delisted; no timezone found
+2026-10-20 18:35:57,860 yfinance 
+1 Failed download:
+2026-10-20 18:35:57,860 yfinance ['WYND']: possibly delisted; no timezone found
+2026-10-20 18:35:57,865 yfinance $X: possibly delisted; no timezone found
+2026-10-20 18:35:57,865 yfinance 
+1 Failed download:
+2026-10-20 18:35:57,865 yfinance ['X']: possibly delisted; no timezone found
+2026-10-20 18:35:57,870 yfinance $XEC: possibly delisted; no timezone found
+2026-10-20 18:35:57,870 yfinance 
+1 Failed download:
+2026-10-20 18:35:57,870 yfinance ['XEC']: possibly delisted; no timezone found
+2026-10-20 18:35:57,874 yfinance $XL: possibly delisted; no timezone found
+2026-10-20 18:35:57,875 yfinance 
+1 Failed download:
+2026-10-20 18:35:57,875 yfinance ['XL']: possibly delisted; no timezone found
+2026-10-20 18:35:57,879 yfinance $XLNX: possibly delisted; no timezone found
+2026-10-20 18:35:57,880 yfinance 
+1 Failed download:
+2026-10-20 18:35:57,880 yfinance ['XLNX']: possibly delisted; no timezone found
+2026-10-20 18:35:57,884 yfinance $XTO: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+2026-10-20 18:35:57,885 yfinance 
+1 Failed download:
+2026-10-20 18:35:57,885 yfinance ['XTO']: possibly delisted; no price data found  (1d 2009-01-01 -> 2026-10-20)
+snapshot: /home/user/Wharton-Global-Investment-Competition/data/snapshots/sp500_2026-10-19

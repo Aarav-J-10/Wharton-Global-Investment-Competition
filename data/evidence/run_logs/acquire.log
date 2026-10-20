@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/Wharton-Global-Investment-Competition/wic/__main__.py", line 113, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/user/Wharton-Global-Investment-Competition/wic/__main__.py", line 97, in main
+    cmd_acquire(a)
+    ~~~~~~~~~~~^^^
+  File "/home/user/Wharton-Global-Investment-Competition/wic/__main__.py", line 31, in cmd_acquire
+    snap = acquire(cutoff, Path(a.data), cache_dir=Path(a.cache) if a.cache else None)
+  File "/home/user/Wharton-Global-Investment-Competition/wic/snapshot.py", line 93, in acquire
+    tmap, tmeta = S.fetch_ticker_map(http)
+                  ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/user/Wharton-Global-Investment-Competition/wic/sources/sec.py", line 34, in fetch_ticker_map
+    raise SourceUnavailable(f"SEC company_tickers HTTP {r.status_code}")
+wic.sources.http.SourceUnavailable: SEC company_tickers HTTP 403

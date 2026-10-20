@@ -162,6 +162,9 @@ are biased upward; Top-10-vs-scored-universe comparisons share the same bias and
 | `docs/PRIOR_BUILD_AUDIT.md` | Why the handed-off build produced zero rankings |
 | `docs/STRATEGY_OPERATIONS.md` | Monthly research cycle, turnover governance, hard limits |
 | `docs/reference/` | Controlling specification and model-gate memo |
+| `data/snapshots/` | Sealed, hash-manifested inputs: `sp500_2026-10-19_current` (live screen) and `sp500_2026-10-19` (with history, for the backtest) |
+| `data/evidence/` | Raw SEC XBRL filings, pinned Wikipedia revisions and run logs behind the snapshots, with hashes |
+| `outputs/` | Published screen run and backtest run (each with `run_manifest.json` output hashes) |
 
 ## Limits
 
