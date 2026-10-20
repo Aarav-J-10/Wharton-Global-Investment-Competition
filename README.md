@@ -7,13 +7,60 @@ Global High School Investment Competition (client: Laura Gao), plus a walk-forwa
 > **Model role: MODEL SUPPORT.** A rank means "research this next" — never "buy". The engine places no
 > orders, has no BUY state, and does not size positions. WInS availability is unchecked for every name.
 
+## Latest validated run — cutoff 2026-10-19 (market close)
+
+Universe: Wikipedia revision [1380159481](https://en.wikipedia.org/w/index.php?oldid=1380159481)
+(2026-10-14, 503 constituents; cross-checked identical to the `datasets/s-and-p-500-companies` mirror).
+390 eligible, **260 complete 11-factor scores**, independent validator passed, byte-for-byte reproduction
+verified. Outputs: `outputs/screen/sp500_2026-10-19_current__stock-research-competition-v1.2__cfgbddebc2e350e/`.
+
+| # | Ticker | Company | Sector | Composite | Quality | Valuation | Growth | Momentum | Risk | Core policy |
+|---:|---|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | INCY | Incyte | Health Care | 86.4 | 95.9 | 90.2 | 90.4 | 77.5 | 60.0 | pass |
+| 2 | EXPE | Expedia Group | Consumer Discretionary | 79.5 | 90.2 | 86.2 | 81.0 | 87.0 | 16.0 | pass |
+| 3 | MU | Micron Technology | Information Technology | 76.7 | 90.6 | 88.1 | 48.6 | 97.3 | 27.7 | pass |
+| 4 | NVDA | Nvidia | Information Technology | 73.0 | 86.0 | 44.1 | 97.3 | 50.1 | 89.2 | pass |
+| 5 | MO | Altria | Consumer Staples | 72.6 | 86.2 | 84.1 | 41.1 | 69.4 | 78.8 | pass |
+| 6 | SNDK | Sandisk | Information Technology | 72.5 | 92.1 | 78.9 | 48.6 | 94.3 | 5.1 | outside (FCF history) |
+| 7 | DXCM | Dexcom | Health Care | 72.2 | 89.7 | 38.3 | 90.1 | 75.8 | 44.2 | pass |
+| 8 | DECK | Deckers Brands | Consumer Discretionary | 69.5 | 91.6 | 90.2 | 90.6 | 16.0 | 26.6 | outside (composite < 70) |
+| 9 | PM | Philip Morris International | Consumer Staples | 69.3 | 83.2 | 32.4 | 80.9 | 82.7 | 51.5 | outside (composite < 70) |
+| 10 | DAL | Delta Air Lines | Industrials | 69.1 | 41.9 | 97.3 | 82.1 | 84.1 | 37.7 | outside (composite, quality) |
+
+Ranks 11–20: ADP, ROST, BMY, EIX, SNA, CAH, TGT, KO, VRTX, GD. Every ±5-point family-weight shift keeps
+≥ 80% of the Top 20 (Spearman ≥ 0.986). Communication Services, Energy and Materials are unranked under
+the 20-valid-peer rule (see `docs/MODEL_CHANGE_LOG.md`). Ranks are research priorities, not buy signals.
+
+### Walk-forward backtest (Feb 2013 → Oct 2026, 166 monthly rebalances, net of 10 bps costs)
+
+Outputs: `outputs/backtest/sp500_2026-10-19__backtest__cfgbddebc2e350e/` (`BACKTEST_REPORT.md`, charts, daily returns, holdings).
+
+| Book | CAGR | Vol | Sharpe | Max DD | vs scored universe (excess CAGR / IR) |
+|---|---:|---:|---:|---:|---:|
+| Top 10 (EW) | 12.6% | 18.7% | 0.63 | −38.2% | −0.4% / −0.01 |
+| Top 10 sector-capped | 12.5% | 18.4% | 0.63 | −38.5% | −0.5% / −0.02 |
+| Top 20 (EW) | 14.2% | 17.7% | 0.74 | −39.9% | +1.2% / +0.16 |
+| Best quintile (Q1) | 14.3% | 16.8% | 0.77 | −36.1% | +1.3% / +0.20 |
+| Worst quintile (Q5) | 13.6% | 20.8% | 0.63 | −44.0% | +0.6% / +0.17 |
+| Scored universe (EW) | 13.0% | 16.9% | 0.70 | −36.9% | — |
+| SPY | 14.6% | — | 0.79 | −33.7% | — |
+| RSP (equal-weight S&P 500) | 12.0% | — | 0.64 | −39.0% | — |
+
+**Honest read:** the composite's mean monthly rank IC is +0.009 (t = 0.93, 57% of months positive) —
+not statistically significant. The broad top of the ranking (Top 20 / Q1) beat the scored universe by about
+1.2–1.3% a year with Sharpe 0.74–0.77, but the quintiles are not monotonic and the concentrated Top 10 added
+nothing. Cap-weighted SPY beat every equal-weight book, largely due to mega-cap technology in 2023–2025. This
+supports the model-gate decision: **MODEL SUPPORT** (research prioritisation), **not** an alpha claim. The
+weights were not, and should not be, re-tuned to improve these numbers. Survivorship: on average 75 of ~503
+members per month lacked Yahoo price history (146 in 2013 → 1 in 2026); see `rebalance_coverage.csv`.
+
 ## Quick start
 
 ```bash
 pip install -r requirements.txt
 export WIC_SEC_USER_AGENT="Your Name your@email.com"   # SEC fair-access requirement (never saved)
 python -m wic all            # acquire snapshot -> screen -> backtest -> reproduce & verify
-python -m pytest -q          # 57 offline tests (synthetic fixtures only)
+python -m pytest -q          # 64 offline tests (synthetic fixtures only)
 ```
 
 Individual steps: `python -m wic acquire [--cutoff YYYY-MM-DD]`, `python -m wic screen`,
@@ -99,7 +146,7 @@ are biased upward; Top-10-vs-scored-universe comparisons share the same bias and
 
 | Path | Purpose |
 |---|---|
-| `wic/sources/` | Wikipedia universe, PIT membership, SEC companyfacts, Yahoo prices |
+| `wic/sources/` | Wikipedia universe, PIT membership, SEC companyfacts (+ XBRL-instance supplement for filings companyfacts misses), Yahoo prices |
 | `wic/snapshot.py` | Acquisition, sealing and verification of input snapshots |
 | `wic/accounting/` | XBRL concept routes and point-in-time normalization |
 | `wic/factors.py` | The eleven factor outcomes |

@@ -14,8 +14,8 @@
     "top10_is_rank_1_to_10": true,
     "weights_sum_to_one": true
   },
-  "composites_checked": 259,
+  "composites_checked": 260,
   "notes": [],
   "passed": true,
-  "scored_rows_checked": 3736
+  "scored_rows_checked": 3737
 }

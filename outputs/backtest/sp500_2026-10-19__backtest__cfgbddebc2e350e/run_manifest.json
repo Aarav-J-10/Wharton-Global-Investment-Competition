@@ -1,0 +1,17 @@
+{
+  "code_sha256": "6fc4e978b596ccb7001958fe0938b1d637acb8b0d5e3c339e6ce6c6ebad73bbd",
+  "outputs": {
+    "BACKTEST_REPORT.md": "3899c9d6f19a1ae30684ca42747be13d3c4de13d77b67198c81a08bc17329422",
+    "BACKTEST_SUMMARY.json": "677c9a3a367da2eb6fa99114282bc80ec40d56990d827e539e5ca3efd384c9bc",
+    "calendar_year_returns_net.csv": "ced65a00cf8e7229728beecaf15c6e56257863b4a26f8a2b23359ab153bb5591",
+    "daily_returns_gross.csv": "8059afa8cdabb5fd37714e0e262c56a74d40726deeca79b13f650deef00874c4",
+    "daily_returns_net.csv": "46493bf8d67170ae36ae0062173e21489fc46b4cbc2c7ab2fcc180ee13686d54",
+    "holdings.csv": "0bbd894945598d070a4ed7d5274b20d12ecca2cd9f125560f3cac3a139307ae0",
+    "ic_series.csv": "14825819da5e3670bf489b9202feee1eb051ff0555b347ad1554815539d36840",
+    "monthly_returns_net.csv": "daca0b3782c7dd3380b342ee661b15073ade6bcdf714e370eb42ecad0943fe91",
+    "rebalance_coverage.csv": "80884fb164f6a3399b1087baa22489d15670a87a942075681827a7612ecb1ef0",
+    "turnover.csv": "f3ce927159294ae7d965970c95e6959f1a6c4c46648f73b0ed4e6df780097fae"
+  },
+  "run_id": "sp500_2026-10-19__backtest__cfgbddebc2e350e",
+  "snapshot_manifest_sha256": "4673125b2dcf9b2f9e255b3357b272880e6e026b31438d27f874d71058070961"
+}

@@ -175,3 +175,15 @@ def test_equivalent_tag_fills_gap_only_when_verified():
     rows[-1] = fact("Revenues", "2023-01-01", "2023-12-31", 50.0, "2024-02-01", "10-K")       # no longer equivalent
     hist, status = consistent_annual_series(view(rows), tags)
     assert status == "INSUFFICIENT_ANNUAL_HISTORY"
+
+
+def test_asc606_revenue_tag_migration_bridged_with_sanity_guard():
+    rows = [fact("SalesRevenueNet", "2017-01-01", "2017-12-31", 1000, "2018-02-20", "10-K"),
+            fact("SalesRevenueNet", "2017-01-01", "2017-06-30", 480, "2017-08-01"),
+            fact("RevenueFromContractWithCustomerExcludingAssessedTax", "2018-01-01", "2018-06-30", 520, "2018-08-01")]
+    tags = ("SalesRevenueNet", "RevenueFromContractWithCustomerExcludingAssessedTax")
+    q = flow_ttm(view(rows), tags, T("2018-06-30"), allow_mixed=True, sanity_vs_fy=(0.5, 2.0))
+    assert q.value == pytest.approx(1040) and q.lineage["flag"] == "TTM_ACROSS_EQUIVALENT_TAGS"
+    rows[2] = fact("RevenueFromContractWithCustomerExcludingAssessedTax", "2018-01-01", "2018-06-30", 5200, "2018-08-01")
+    q = flow_ttm(view(rows), tags, T("2018-06-30"), allow_mixed=True, sanity_vs_fy=(0.5, 2.0))
+    assert q.status == "TTM_CROSS_TAG_SANITY_FAILED"

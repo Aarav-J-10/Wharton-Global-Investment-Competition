@@ -205,7 +205,14 @@ def merged(view: View, concepts: tuple) -> FA | None:
               pick("form").astype(object), np.array([c for c, _, _ in keep], dtype=object))
 
 
-def flow_ttm(view: View, concepts: tuple, E: pd.Timestamp, allow_mixed: bool = False) -> Q:
+def flow_ttm(view: View, concepts: tuple, E: pd.Timestamp, allow_mixed: bool = False,
+             sanity_vs_fy: tuple[float, float] | None = None) -> Q:
+    """TTM from one tag; optionally a flagged bridge across equivalent tags.
+
+    `sanity_vs_fy=(lo, hi)`: a cross-tag result is accepted only if it lies within
+    [lo, hi] x the latest fiscal-year value of the merged series (guards against
+    splicing a sub-line tag into a total).
+    """
     reason = None
     for c in concepts:
         fa = view.get(c)
@@ -219,6 +226,11 @@ def flow_ttm(view: View, concepts: tuple, E: pd.Timestamp, allow_mixed: bool = F
         m = merged(view, concepts)
         if m is not None:
             q = _ttm_one(m, E, "MIXED")
+            if q.ok and sanity_vs_fy is not None:
+                fy = np.flatnonzero((m.dur >= FY_DUR[0]) & (m.dur <= FY_DUR[1]) & (m.end <= np.datetime64(E, "ns")))
+                ref = m.val[fy[np.argmax(m.end[fy])]] if len(fy) else None
+                if ref is None or ref <= 0 or not sanity_vs_fy[0] <= q.value / ref <= sanity_vs_fy[1]:
+                    return _missing("TTM_CROSS_TAG_SANITY_FAILED", concepts=list(concepts))
             if q.ok:
                 q.lineage["flag"] = "TTM_ACROSS_EQUIVALENT_TAGS"
                 return q
@@ -503,7 +515,7 @@ class IssuerFacts:
         out["period_end"] = E
         q = {}
         revenue_tags = primary_order(view, C.REVENUE)
-        q["revenue"] = flow_ttm(view, revenue_tags, E)
+        q["revenue"] = flow_ttm(view, revenue_tags, E, allow_mixed=True, sanity_vs_fy=(0.5, 2.0))
         ebit = flow_ttm(view, C.OPERATING_INCOME, E)
         if not ebit.ok:
             pre, intr = flow_ttm(view, C.PRETAX_INCOME, E), flow_ttm(view, C.INTEREST_EXPENSE, E)

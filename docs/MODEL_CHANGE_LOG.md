@@ -28,8 +28,27 @@ infrastructure conventions only.
 | 12 | Market data provider | `REQUIRED_INPUT` | Yahoo Finance via `yfinance`; `Adj Close` (split + dividend adjusted) is the total-return index; raw close reconstructed from split events. | A provider is required to run; the prior build already targeted Yahoo. | Live runs possible. Provider is free/unlicensed — see limitations. |
 | 13 | Historical backtest | Deferred (§3.3) | Point-in-time walk-forward backtest added, using the production scoring path. | Explicit user request (2026-10-20). Weights are **not** fitted to it. | Evidence on signal quality; see survivorship limits. |
 
-## Observed effect
+### Changes made while auditing the first live run (2026-10-20)
 
-To be filled from the first live run (`outputs/screen/<run_id>/coverage_report.csv`
-and `missing_reasons.csv`) — the change log is not complete until observed
-coverage is recorded and reviewed.
+| # | Area | Problem found in live data | V1.2 behaviour | Expected effect |
+|---|---|---|---|---|
+| 14 | SEC source completeness | SEC companyfacts API omitted 93 recent 10-K/10-Q filings (e.g. Coca-Cola's 10-Q filed 2026-07-29), leaving 48 issuers falsely `STALE_INPUT`. | Every 10-K/10-Q listed in the issuer's EDGAR submissions index from the last two years but absent from companyfacts is read from the filing's own XBRL instance (non-dimensional facts only, as companyfacts). Each supplemented filing is logged with URL and SHA-256 in `sec_filing_supplement.csv`. | Current fundamentals for all filers; primary source unchanged (SEC). |
+| 15 | Share count corroboration | Issuer tagging-scale errors: McDonald's weighted diluted shares tagged as 711.1, Waters as 98.2 billion. A single cross-check propagated these into market cap. | A share count (cover page → balance sheet → weighted diluted) is accepted only if an independent source (balance-sheet shares or weighted diluted shares of this or the prior three quarters) agrees within 25% after split adjustment; values below 100,000 are rejected as implausible. Otherwise `SHARES_MAPPING_REVIEW` (blocked, not guessed). | Prevents absurd FCF yields / EV multiples (MCD 44,975× → blocked; WAT corrected to $42.7B). |
+| 16 | Revenue tag consistency | Some issuers use `Revenues` for a sub-line (General Mills $2.0B vs $19.5B total; Emerson 2022), producing 111–121% fake CAGRs. | Primary revenue tag = the alternative with the largest value at the latest fiscal year; used for both TTM and the 3-year history. Other tags may fill a missing year only if they match the primary within 2% in a year both report (EPS: diluted first, 3%). | Correct revenue growth; no cross-tag splicing. |
+| 17 | Cash-flow tag switches | Issuers switching capex/CFO/D&A tags between the 10-K and 10-Qs could not be bridged (e.g. Marriott). Verizon tags capex as `PaymentsToAcquireOtherProductiveAssets`. | After single-tag routes fail, a TTM bridge across equivalent cash-flow tags (highest priority per period) is allowed and flagged `TTM_ACROSS_EQUIVALENT_TAGS`; `PaymentsToAcquireOtherProductiveAssets` added as the lowest-priority capex tag. Never applied to revenue. | More FCF coverage, flagged per company. |
+
+## Observed effect (live run, cutoff 2026-10-19)
+
+| Measure | Prior build (2026-10-02 replay) | V1.2 live run |
+|---|---:|---:|
+| Eligible companies | 381 | 390 |
+| ROIC valid | 40 | 339 |
+| Net debt / EBITDA valid | 43 | 343 |
+| EV / EBIT valid | 12 | 337 |
+| Complete 11-factor scores | **0** | **260** |
+| Sectors with a ranked company | 0 | 6 of 9 in-scope |
+
+Sectors that remain unranked under the unchanged 20-peer rule: Communication Services (19 eligible),
+Energy (21 eligible, ≤ 18 valid on several metrics) and Materials (24 eligible, 16–17 valid on EPS
+growth / EV/EBIT). The `peer_min_15` sensitivity variant would add 19 names (279 complete); changing the minimum is a
+Supervisor decision and has **not** been made.
