@@ -1,0 +1,8 @@
+[project]
+name = "wic-s003"
+version = "1.2.0"
+description = "WIC-S003 interpretable eleven-factor S&P 500 research screen with point-in-time backtest"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,70 @@
+# WIC-S003 Competition V1.1 configuration (spec section 7) with logged V1.2
+# engineering changes. Every deviation from v1.1 is listed in
+# docs/MODEL_CHANGE_LOG.md; nothing here is tuned on backtest results.
+schema_version: "1.2"
+model_version: "stock-research-competition-v1.2"
+mode: CURRENT_RESEARCH
+base_currency: USD
+market_timezone: America/New_York
+
+universe:
+  index_id: SP500
+  snapshot_required: true
+  security_type: COMMON_STOCK
+  min_raw_close_usd: 5.0
+  min_price_history_calendar_months: 13
+  required_return_observations: 252
+  required_annual_observations: 4
+  excluded_sectors: [Financials, Real Estate]
+  duplicate_issuer_share_class_policy: MOST_LIQUID_RESEARCH_CLASS
+
+fundamentals:
+  max_latest_quarter_age_days: 180
+  max_latest_fy_age_days: 550
+  filing_lag_days: 1            # a filing is usable the session after its SEC filing date
+  max_effective_tax_rate: 0.50
+  no_silent_imputation: true
+
+scoring:
+  peer_level: SECTOR
+  min_valid_peers_per_metric: 20
+  winsor_quantiles: [0.05, 0.95]
+  percentile_method: MIDRANK
+  require_all_11_factor_outcomes: true
+  missing_weight_policy: NO_RENORMALIZATION
+  economic_sentinel_score: 0.0
+
+queues:
+  research_queue_size: 20
+  priority_queue_size: 10
+  max_priority_names_same_sector: 3
+
+resilience:
+  require_positive_ttm_ebit_cfo_fcf: true
+  positive_fcf_years_of_latest_three: 2
+  max_net_debt_ebitda: 4.0
+  min_interest_coverage_if_interest_positive: 3.0
+  composite_score_floor_for_auto_priority: 70.0
+  quality_family_floor_for_auto_priority: 60.0
+
+sensitivity:
+  family_shift_pp: 0.05
+  winsor_variants: [[0.01, 0.99], [0.025, 0.975]]
+  peer_minimum_variants: [15, 25]
+  price_floor_variants: [10.0]
+  flag_spearman_below: 0.90
+  flag_top20_jaccard_below: 0.60
+  correlation_flag_abs: 0.80
+
+market_data:
+  provider: yfinance            # Yahoo Finance via yfinance; Adj Close = split+dividend adjusted total-return proxy
+  history_start: "2009-01-01"
+  liquidity_window: 63
+
+backtest:
+  start: "2013-01-31"
+  rebalance: MONTH_END
+  portfolios: [TOP10, TOP20, TOP10_SECTOR_CAPPED]
+  transaction_cost_bps_one_way: 10
+  benchmarks: [SPY, RSP]
+  risk_free_proxy: "^IRX"
